@@ -69,22 +69,5 @@ def preprocess_text_aggressive(text: str) -> str:
     return ' '.join(words)
 
 def process_course_input(course_input: str) -> str:
-    """Process course input to handle multiple courses or complex content"""
-    
-    # Check if it contains multiple courses (separated by common delimiters)
-    course_separators = ['\n', ';', '|', '&', ' and ', ' + ', '//']
-    
-    # Count potential separators
-    separator_found = None
-    for sep in course_separators:
-        if sep in course_input and course_input.count(sep) >= 1:
-            separator_found = sep
-            break
-    
-    if separator_found:
-        courses = [course.strip() for course in course_input.split(separator_found) if course.strip()]
-        if len(courses) > 1:
-            return f"multiple courses: {', '.join(courses)}"
-    
+    """Preserve course content exactly as supplied by the caller."""
     return course_input
-
