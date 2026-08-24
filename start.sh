@@ -26,11 +26,11 @@ fi
 
 # Cleanup existing containers and images if requested
 echo "Cleaning up existing badge generation services..."
-docker compose -f docker-compose.yml down -v || true
+docker compose -f docker-compose.yml down || true
 
 if [ -n "$CLEAN_FLAG" ]; then
     echo "Removing badge generation Docker images..."
-    docker rmi docker-ollama docker-badge-api 2>/dev/null || true
+    docker rmi docker-badge-api 2>/dev/null || true
     docker rmi $(docker images -f "dangling=true" -q) 2>/dev/null || true
 fi
 

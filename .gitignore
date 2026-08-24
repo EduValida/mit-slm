@@ -11,3 +11,6 @@ logs/
 .vscode/
 claude.md
 
+# dados potencialmente privados
+data/raw/*.pdf
+

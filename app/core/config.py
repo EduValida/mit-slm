@@ -3,6 +3,13 @@ from pydantic_settings import BaseSettings  # Changed from pydantic import BaseS
 from pydantic import Field, model_validator
 from typing import Dict, List
 import os
+from pathlib import Path
+
+
+DEFAULT_SYSTEM_PROMPT_PATH = (
+    Path(__file__).resolve().parents[1] / "prompts" / "badge_system_prompt.txt"
+)
+
 
 def _parse_cors_origins(raw: str) -> List[str]:
     """Parse a comma-separated list of allowed CORS origins into a clean list."""
@@ -12,7 +19,19 @@ def _parse_cors_origins(raw: str) -> List[str]:
 class Settings(BaseSettings):
     # Ollama Configuration
     OLLAMA_API_URL: str = os.getenv("OLLAMA_API_URL", "http://localhost:11434/api/generate")
-    MODEL_NAME: str = os.getenv("MODEL_NAME", "phi4-chat:latest")
+    MODEL_NAME: str = os.getenv("MODEL_NAME", "phi4-mini:3.8b-q4_K_M")
+    MODEL_KEEP_ALIVE: str = os.getenv("MODEL_KEEP_ALIVE", "30m")
+    MODEL_SYSTEM_PROMPT_PATH: str = os.getenv(
+        "MODEL_SYSTEM_PROMPT_PATH",
+        str(DEFAULT_SYSTEM_PROMPT_PATH),
+    )
+    MODEL_TEMPERATURE: float = 0.10
+    MODEL_TOP_P: float = 0.9
+    MODEL_TOP_K: int = 25
+    MODEL_NUM_PREDICT: int = 1024
+    MODEL_REPEAT_PENALTY: float = 1.05
+    MODEL_NUM_CTX: int = 6144
+    MODEL_SEED: str = ""
     # Badge Image Service Configuration
     BADGE_IMAGE_SERVICE_URL: str = os.getenv("BADGE_IMAGE_SERVICE_URL", "http://localhost:3001")
 
@@ -31,15 +50,7 @@ class Settings(BaseSettings):
     ENABLE_LOG_BASE64_DATA: bool = False
 
     # Model Configuration
-    MODEL_CONFIG: Dict = {
-        "temperature": 0.10,
-        "top_p": 0.9,
-        "top_k": 25,
-        "num_predict": 1024,
-        "repeat_penalty": 1.05,
-        "num_ctx": 6144,
-        "stop": ["<|end|>", "}\n\n"]
-    }
+    MODEL_CONFIG: Dict = Field(default_factory=dict)
     
     # Asset paths - COMMENTED OUT (moved to external image service)
     # ASSETS_PATH: str = "assets/"
@@ -99,12 +110,22 @@ class Settings(BaseSettings):
         "th": "Thai", "tr": "Turkish", "uk": "Ukrainian"
     }
 
-    model_config = {"env_file": ".env"}  # Updated for Pydantic v2
+    model_config = {"env_file": ".env", "extra": "ignore"}
 
     @model_validator(mode="after")
     def _derive_cors_origins(self) -> "Settings":
-        """Derive the parsed CORS allowlist from the comma-separated env string."""
+        """Derive settings assembled from individual environment variables."""
         self.CORS_ORIGINS = _parse_cors_origins(self.CORS_ORIGINS_STR)
+        self.MODEL_CONFIG = {
+            "temperature": self.MODEL_TEMPERATURE,
+            "top_p": self.MODEL_TOP_P,
+            "top_k": self.MODEL_TOP_K,
+            "num_predict": self.MODEL_NUM_PREDICT,
+            "repeat_penalty": self.MODEL_REPEAT_PENALTY,
+            "num_ctx": self.MODEL_NUM_CTX,
+        }
+        if self.MODEL_SEED.strip():
+            self.MODEL_CONFIG["seed"] = int(self.MODEL_SEED)
         return self
 
 settings = Settings()

@@ -2,6 +2,7 @@ import httpx
 import logging
 import json
 import uuid
+from pathlib import Path
 from typing import Dict, Optional, AsyncGenerator, Any
 from fastapi import HTTPException
 from app.core.config import settings
@@ -24,36 +25,41 @@ class OllamaClient:
     def __init__(self):
         self.api_url = settings.OLLAMA_API_URL
         self.model_config = settings.MODEL_CONFIG
+        self.keep_alive = settings.MODEL_KEEP_ALIVE
+        self.system_prompt = Path(settings.MODEL_SYSTEM_PROMPT_PATH).read_text(
+            encoding="utf-8"
+        ).strip()
 
     async def generate_stream(
         self, 
         content: str, 
-        temperature: float = 0.10, 
-        max_tokens: int = 1024,
-        top_p: float = 0.9, 
-        top_k: int = 50, 
-        repeat_penalty: float = 1.05,
+        temperature: Optional[float] = None,
+        max_tokens: Optional[int] = None,
+        top_p: Optional[float] = None,
+        top_k: Optional[int] = None,
+        repeat_penalty: Optional[float] = None,
         context_length: Optional[int] = None
     ) -> AsyncGenerator[Dict[str, Any], None]:
         """Make streaming API call to Ollama with structured response format."""
         
-        # Use user context length or default from model config
-        max_ctx_len = self.model_config.get("num_ctx", 4096)
-        ctx_len = context_length if context_length is not None else max_ctx_len
+        options = self.model_config.copy()
+        overrides = {
+            "temperature": temperature,
+            "num_predict": max_tokens,
+            "top_p": top_p,
+            "top_k": top_k,
+            "repeat_penalty": repeat_penalty,
+            "num_ctx": context_length,
+        }
+        options.update({key: value for key, value in overrides.items() if value is not None})
         
         payload = {
             "model": settings.MODEL_NAME,
+            "system": self.system_prompt,
             "prompt": content,
             "stream": True,
-            "keep_alive": "24h",
-            "options": {
-                "temperature": temperature,
-                "num_predict": max_tokens,
-                "top_p": top_p,
-                "top_k": top_k,
-                "repeat_penalty": repeat_penalty,
-                "num_ctx": ctx_len
-            }
+            "keep_alive": self.keep_alive,
+            "options": options,
         }
 
         timeout = httpx.Timeout(300.0)
@@ -133,24 +139,18 @@ class OllamaClient:
 
     async def generate(self, prompt: str, config: Optional[Dict] = None) -> tuple[str, Dict[str, Any]]:
         """Make async API call to Ollama. Returns (response_text, metrics)."""
-        if config is None:
-            config = self.model_config.copy()
-        else:
-            config = config.copy()
-
-        # Keep alive default or from config
-        keep_alive = config.pop("keep_alive", "6h")
-
-        # Set default context length if not provided
-        if "num_ctx" not in config:
-            config["num_ctx"] = self.model_config.get("num_ctx", 2048)
+        options = self.model_config.copy()
+        overrides = config.copy() if config else {}
+        keep_alive = overrides.pop("keep_alive", self.keep_alive)
+        options.update(overrides)
 
         payload = {
             "model": settings.MODEL_NAME,
+            "system": self.system_prompt,
             "prompt": prompt,
             "stream": False,
             "keep_alive": keep_alive,
-            "options": config
+            "options": options,
         }
 
         timeout = httpx.Timeout(300.0)
@@ -188,22 +188,20 @@ class OllamaClient:
             logger.error("Unexpected error calling model for request_id %s: %s", request_id, e)
             raise HTTPException(status_code=500, detail=f"Model call failed: {str(e)}")
 
-    async def generate_with_parameters(self, prompt: str, temperature: float = 0.15, 
-                                       max_tokens: int = 400, top_p: float = 0.8, 
-                                       top_k: int = 30, repeat_penalty: float = 1.05, 
+    async def generate_with_parameters(self, prompt: str, temperature: Optional[float] = None,
+                                       max_tokens: Optional[int] = None, top_p: Optional[float] = None,
+                                       top_k: Optional[int] = None, repeat_penalty: Optional[float] = None,
                                        context_length: Optional[int] = None) -> tuple[str, Dict[str, Any]]:
         """Generate response with specific parameters."""
-        config = {
+        overrides = {
             "temperature": temperature,
             "num_predict": max_tokens,
             "top_p": top_p,
             "top_k": top_k,
             "repeat_penalty": repeat_penalty,
+            "num_ctx": context_length,
         }
-
-        if context_length is not None:
-            config["num_ctx"] = context_length
-
+        config = {key: value for key, value in overrides.items() if value is not None}
         response_text, metrics = await self.generate(prompt, config)
         return response_text, metrics
     

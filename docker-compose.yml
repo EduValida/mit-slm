@@ -1,19 +1,28 @@
 services:
   ollama:
-    build:
-      context: .
-      dockerfile: Dockerfile.ollama
-    image: docker-ollama
+    image: ollama/ollama:${OLLAMA_VERSION:-0.32.13}
     container_name: ollama-service
     ports:
       - "11434:11434"
     volumes:
       - ollama-data:/root/.ollama
-      # - ../models:/models
     restart: unless-stopped
-    # No custom entrypoint/command needed - model is baked into the image
-    # Dockerfile CMD ["serve"] will start Ollama automatically
-    
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  model-loader:
+    image: ollama/ollama:${OLLAMA_VERSION:-0.32.13}
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    entrypoint: ["/bin/ollama"]
+    command: ["pull", "${MODEL_NAME:-phi4-mini:3.8b-q4_K_M}"]
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: "no"
 
   badge-api:
     build:
@@ -28,10 +37,21 @@ services:
       - ./logs:/app/logs
     environment:
       - OLLAMA_API_URL=http://ollama:11434/api/generate
+      - MODEL_NAME=${MODEL_NAME:-phi4-mini:3.8b-q4_K_M}
+      - MODEL_TEMPERATURE=${MODEL_TEMPERATURE:-0.10}
+      - MODEL_TOP_P=${MODEL_TOP_P:-0.9}
+      - MODEL_TOP_K=${MODEL_TOP_K:-25}
+      - MODEL_NUM_PREDICT=${MODEL_NUM_PREDICT:-1024}
+      - MODEL_REPEAT_PENALTY=${MODEL_REPEAT_PENALTY:-1.05}
+      - MODEL_NUM_CTX=${MODEL_NUM_CTX:-6144}
+      - MODEL_SEED=${MODEL_SEED:-}
+      - MODEL_KEEP_ALIVE=${MODEL_KEEP_ALIVE:-30m}
+      - MODEL_SYSTEM_PROMPT_PATH=/app/prompts/badge_system_prompt.txt
       - BADGE_IMAGE_SERVICE_URL=http://host.docker.internal:3001  # For external image service on host
       - PYTHONUNBUFFERED=1
     depends_on:
-      - ollama
+      model-loader:
+        condition: service_completed_successfully
     extra_hosts:
       - "host.docker.internal:host-gateway"  # Enable access to host machine services
     restart: unless-stopped

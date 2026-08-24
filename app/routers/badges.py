@@ -448,7 +448,7 @@ async def generate_badge_stream(request: GenerateBadgeRequest):
         from app.services.text_processor import process_course_input
         processed_content = process_course_input(request.course_input)
 
-        # Build user content - Modelfile handles system instructions
+        # Build user content; the model client adds the shared system prompt.
         user_content = f"""[LANGUAGE: {_stream_lang_name}]
 
 Course Content: {processed_content}
@@ -469,7 +469,7 @@ Parameters:
         user_content += "\n\nRespond with ONLY a JSON object. Start your response with `{` — no intro text, no explanation, no markdown fences."
         user_content += '\nSchema: {"badge_name": "...", "badge_description": "...", "criteria": {"narrative": "..."}}'
 
-        # Minimal prompt - Modelfile handles all complex instructions
+        # The model client supplies the common generation instructions.
         prompt = user_content
         
         

@@ -146,7 +146,7 @@ def _resolve_language(request) -> str:
 
 
 async def generate_badge_metadata_async(request) -> dict:
-    """Generate badge metadata using enhanced Modelfile system context"""
+    """Generate badge metadata using the shared application system prompt."""
 
     badge_params = get_badge_configuration(request)
     processed_course_input = process_course_input(request.course_input)
@@ -189,7 +189,7 @@ Parameters:
     user_content += "\n\nRespond with ONLY a JSON object. Start your response with `{` — no intro text, no explanation, no markdown fences."
     user_content += "\nSchema: {\"badge_name\": \"...\", \"badge_description\": \"...\", \"criteria\": {\"narrative\": \"...\"}}"
 
-    # Minimal prompt - Modelfile handles all the complex instructions
+    # The shared system prompt supplies the common generation instructions.
     prompt = user_content
     
     response, metrics = await call_model_async(prompt)
@@ -326,4 +326,3 @@ Generate badge metadata now:"""
                 }
         elif chunk.get("type") == "error":
             yield chunk
-
