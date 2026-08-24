@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "document_id": "02605_EMB5012_20261",
+  "institution": "Universidade Federal de Santa Catarina (UFSC)",
+  "academic_period": "2026/1",
+  "course": {
+    "code": "EMB5012",
+    "name": "Desenho e modelagem geométrica",
+    "credits": 3,
+    "workload": {
+      "unit": "class_hours",
+      "total": 54
+    }
+  },
+  "curricula": null,
+  "prerequisites": [
+    "EMB5055 Representação gráfica."
+  ],
+  "syllabus": "Sistemas CAD, metodologia para modelamento de produtos tridimensionais. Praticas com software CAD.\nTécnicas de modelamento sólido. Modelamento de produtos, geração de desenho de engenharia, normas\nde desenho técnico, desenho em conjunto, montagem, lista de materiais.",
+  "objectives": "Ao final da disciplina, o aluno será capaz de exercer as seguintes atividades:\n• Desenvolver modelos digitais 3D de peças e montagens complexas\n\n• Entender a filosofia de projeto para manufatura\n\n• Trabalhar com filosofias de projeto botton-up e top down, utilizando a mais adequada conforme o\nprojeto.\n\n• Avaliar propriedades de massa de peças e montagens, e avaliar colisão entre as peças de uma\nmontagem\n\n• Gerar folhas de engenharia para fabricação\n\n• Gerar quantitativos com listas de materiais de montagem.\n\n• Entender sobre tolerâncias dimensionais e tolerâncias geométricas\n\n• Entender sobre representação de elementos de máquinas\n\n• Saber interpretar folhas de engenharia.",
+  "content_program": "Noções de projeto de produtos, normas de desenho técnico, sistemas CAD para projeto mecânico,\nesboços 2d, modelagem 3d de peças, montagens, chapas metálicas, noções de manufatura aditiva\n(impressão 3d), folhas de engenharia, geração de listas de materiais, avaliação de propriedades físicas da\npeça/montagem, noções de projeto para manufatura (DFMA), tolerâncias dimensionais e geométricas.",
+  "teaching_methods": "O programa será desenvolvido através de aulas teóricas e práticas, desenvolvidas no laboratório de\ninformática. No início da disciplina será definido trabalho que envolva todo conhecimento programático\nda matéria, de forma com que o aluno acompanhe as aulas com maior interesse e que o conhecimento seja\nfixado e possa ser validado por meios de ferramentas computacionais.",
+  "learning_experiences": null,
+  "assessment": "Será considerado aprovado o estudante que alcançar a média igual ou superior a 5,75 (cinco vírgula setenta\ne cinco) ao final do semestre letivo, e esta será sua nota na disciplina, desde que tenha comparecido a um\nmínimo de 75 % da carga horária da disciplina (art. 72 e art. 69 § 2ª da Resolução 017/CUn/97).\n\nAs avaliações são as seguintes:\n\n● Prova 1, correspondente a 20 % da nota;\n● Trabalho parte 1, correspondente a 25 % da nota;\n● Trabalho parte 2, correspondente a 30 % da nota\n● Prova 2, correspondente a 25 % da nota\n\nO trabalho será individual."
+}

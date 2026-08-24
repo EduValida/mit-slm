@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "document_id": "INF01017",
+  "institution": "Universidade Federal do Rio Grande do Sul (UFRGS)",
+  "academic_period": "2026/2",
+  "course": {
+    "code": "INF01017",
+    "name": "APRENDIZADO DE MÁQUINA",
+    "credits": 4,
+    "workload": {
+      "unit": "hours",
+      "theoretical": 45,
+      "practical": 15,
+      "total": 60,
+      "collective": 50,
+      "autonomous": 10,
+      "individual": 0,
+      "extension": 0
+    }
+  },
+  "curricula": [
+    {
+      "program": "BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO",
+      "recommended_stage": 6,
+      "recommended_stage_status": "explicit",
+      "nature": "Obrigatória"
+    },
+    {
+      "program": "BACHARELADO EM ESTATÍSTICA",
+      "recommended_stage": null,
+      "recommended_stage_status": "blank_in_source",
+      "nature": "Eletiva"
+    },
+    {
+      "program": "ENGENHARIA DE COMPUTAÇÃO",
+      "recommended_stage": 8,
+      "recommended_stage_status": "explicit",
+      "nature": "Eletiva"
+    },
+    {
+      "program": "ENGENHARIA DE CONTROLE E AUTOMAÇÃO",
+      "recommended_stage": null,
+      "recommended_stage_status": "blank_in_source",
+      "nature": "Eletiva"
+    }
+  ],
+  "prerequisites": null,
+  "syllabus": "Fundamentos, paradigmas, algoritmos e metodologias de Aprendizado de Máquina. Métodos de aprendizado supervisionado e\nnão-supervisionado. Métodos e métricas para avaliação de modelos. Técnicas de preparação de dados.",
+  "objectives": "A disciplina tem como objetivo fornecer uma ampla introdução ao aprendizado de máquina (AM), apresentando conceitos\nfundamentais relacionados à área, os principais algoritmos para tarefas preditivas (com aprendizado supervisionado) e descritivas\n(com aprendizado não-supervisionado) e aspectos metodológicos para preparação de dados e validação de modelos. A disciplina\ntambém visa discutir aspectos de explicabilidade de modelos, vieses preditivos, e aplicações recentes de aprendizado de máquina\nem uma variedade de problemas do mundo real.\n\nA disciplina visa desenvolver as seguintes habilidades específicas:\n\n- Compreender os diversos paradigmas, classes de métodos e métodos de aprendizado de máquina.\n- Identificar impactos positivos e negativos da implantação de um sistema de IA.\n- Identificar se a tarefa é preditiva ou descritiva, de acordo com os requisitos do problema e os dados disponíveis.\n- Propor uma solução adequada em termos de eficácia e eficiência para um problema de aprendizado de máquina de acordo com a\ndescrição e requisitos do problema, os dados e recursos computacionais disponíveis.\n- Avaliar de forma correta e robusta diferentes algoritmos de aprendizado de máquina, utilizando métricas de desempenho e\nestratégias de avaliação apropriadas para o tipo de tarefa em questão.\n- Preparar um conjunto de dados para uso por algoritmos de aprendizado de máquina, tratando a dimensionalidade, escala de\nvalores, entradas ausentes e atributos menos relevantes para a tarefa em questão, de acordo com os requisitos dos algoritmos\nutilizados.\n- Prototipar uma solução de aprendizado supervisionado para um problema de predição\n- Identificar e mitigar under- e overfitting em aprendizado supervisionado\n- Identificar a necessidade de combinação de modelos preditivos (ensemble) e avaliar as abordagens (bagging, boosting, stacking).\n- Definir métricas de similaridade e o método de agrupamento mais apropriados de acordo com os dados e recursos computacionais\ndisponíveis\n- Identificar a necessidade de redução de dimensionalidade dos dados e avaliar a técnica apropriada para o problema.",
+  "content_program": "Semana: 1\nTítulo: Introdução ao aprendizado de máquina e aprendizado supervisionado\nConteúdo: Introdução ao aprendizado de máquina. Principais paradigmas e tipos de tarefas.\nMétodos baseados em distância: k-Nearest Neighbors (kNN). Introdução ao pré-processamento de dados: normalização e codificação\nde dados.\nSemana: 2\nTítulo: Aprendizado supervisionado com modelos baseados em árvores e introdução à avaliação de modelos\nConteúdo: Árvores de decisão. Estratégias de poda em árvores de decisão. Métricas básicas de avaliação de desempenho preditivo e divisão de\ndados com holdout.\nSemana: 3 a 4\nTítulo: Aprendizado supervisionado com modelos lineares e redes neurais\nConteúdo: Regressão linear e logística. Otimização por gradiente descendente. Neurônio artificial. Perceptron multicamada. Backpropagation:\nIntuição, Derivação, Exemplos.\nSemana: 5 a 6\nTítulo: Metodologia de modelagem preditiva: treinamento e avaliação de modelos\nConteúdo: Overfitting e underfitting. Otimização de hiperparâmetros. Estratégias de desenvolvimento, avaliação e comparação de modelos. Data\nleakage. Aspectos práticos.\nSemana: 7\nTítulo: Aprendizado supervisionado com modelos ensemble\nConteúdo: Aprendizado ensemble. Bagging, Boosting, Stacking. Principais algoritmos e aplicações.\nSemana: 8\nTítulo: Avaliação\nConteúdo: Revisão. Aplicação da prova teórica.\nSemana: 9 a 10\nTítulo: Metodologia de modelagem preditiva: preparação de dados e IA explicável\nConteúdo: Pré-processamento de dados: Limpeza de Dados, Imputação de Valores Ausentes, Tratamento de Outliers. Seleção de features.\nRedução de dimensionalidade e visualização: PCA e t-SNE. Interpretabilidade e explicabilidade de modelos preditivos.\nSemana: 11 a 12\nTítulo: Aprendizado não-supervisionado\nConteúdo: Introdução ao aprendizado não-supervisionado. Algoritmos de agrupamentos: k-means e clustering hierárquico. Medidas de\nproximidade. Validação de modelos descritivos. Mineração de padrões frequentes.\nSemana: 13\nTítulo: Aplicações práticas e aspectos sociais e éticos da IA\nConteúdo: Exemplos reais de aplicações de Aprendizado de máquina. Considerações éticas sobre aplicação de algoritmos de aprendizado de\nmáquina no mundo real. Vieses, usos maliciosos, impactos sociais, econômicos e ambientais.\nSemana: 14 a 15\nTítulo: Apresentação de trabalhos e considerações finais\nConteúdo: Apresentação de trabalhos práticos. Discussão sobre aspectos práticos no uso de aprendizado de máquina.",
+  "teaching_methods": "A disciplina é apresentada em aulas teórico-práticas, em que se combina a apresentação dos conceitos e técnicas com o\ndesenvolvimento de eventuais exercícios e discussões. Algumas das aulas serão realizadas em laboratórios para a\nimplementação/visualização dos conceitos vistos em aula.\n\nAs 60 horas previstas para atividades teóricas e práticas indicadas neste Plano de Ensino incluem 30 encontros de 100 minutos de\nduração (2 períodos de 50 minutos por encontro, 2 encontros por semana, durante 15 semanas), num total de 3.000 minutos, e mais\n10 horas (600 minutos) de atividades autônomas, realizadas sem contato direto com o professor, correspondentes a exercícios e\ntrabalhos extraclasse a serem avaliados.\n\nA disciplina utilizará o sistema Moodle/UFRGS para distribuição de material, entrega de trabalhos, organização de grupos e\n\nacompanhamento geral da disciplina. Adicionalmente, outras plataformas também podem ser usadas para facilitar a comunicação, a\nrealização e a avaliação de atividades.\n\nO professor poderá se valer de aulas presenciais e de atividades a distância (desde que nos limites previstos pela UFRGS para\ndisciplinas presenciais e empregando ferramentas para atividades remotas), assim como do apoio de Professores Assistentes\n(Alunos de Pós-Graduação) em Atividades Didáticas.",
+  "learning_experiences": "A disciplina será conduzida através de uma combinação de aulas expositivas dialogadas e do desenvolvimento de trabalhos de\nprogramação em laboratório, promovendo a aplicação prática dos conceitos. O aprendizado será complementado pela resolução de\natividades de reforço extraclasse e pela dedicação aos trabalhos práticos de implementação, que consolidam as habilidades de\nprojeto e prototipagem de soluções de aprendizado de máquina, e também exercitam habilidades de preparar e apresentar\nproblemas técnicos e suas soluções de forma escrita e oral. Além disso, os estudantes utilizarão recursos didáticos como leituras e\nvídeos disponibilizados na plataforma de ensino. A avaliação do progresso e da compreensão do conteúdo será realizada por meio\nde questionários e pequenas atividades autônomas realizadas ao longo do semestre.",
+  "assessment": "O desempenho do aluno será avaliado da seguinte forma:\n\n- Prova teórica (P1): prova teórica (ou, eventualmente, um trabalho teórico) a ser desenvolvido individualmente, abordando\nconceitos e fundamentos da disciplina;\n- Trabalhos Práticos (T1 e T2): dois trabalhos práticos a serem desenvolvidos em grupos, extraclasse, envolvendo implementação\ne/ou aplicação de algoritmos de aprendizado de máquina para resolução de problemas;\n- Atividades de reforço (AT): atividades práticas e/ou teóricas, propostas ao longo do semestre e disponibilizadas via Moodle, de\nrealização individual. Designamos AT como a média ponderada das notas dessas atividades. O peso atribuído a cada atividade será\ndefinido pelo professor, de acordo com os requisitos e características de cada atividade proposta.\n\nA composição da Nota Final (NF) será definida como:\nNF = (0,3 * P1) + (0,3 * T1) + (0,2 * T2) + (0,2 * AT)\n\nP1 e T1 serão realizados aproximadamente na metade do semestre letivo, e T2 será realizado mais próximo ao final do semestre.\n\nSerá aprovado o aluno que obtiver nota final (NF) acima de 6 e frequência mínima de 75%.\n\nA NF será convertida em conceito de acordo com as seguintes regras:\nConceito A: NF >= 9,0\nConceito B: NF >=7,5 e < 9,0\nConceito C: NF >= 6,0 e < 7,5\nConceito D: NF < 6,0\nConceito FF: caso o aluno não obtenha frequência mínima de 75%, independentemente da nota e sem direito a recuperação.\n\nO aluno que não obtiver NF >= 6,0 poderá realizar uma prova de recuperação, conforme definido no item \"Atividades de\nRecuperação Previstas\"."
+}

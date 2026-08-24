@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Structured course plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "document_id",
+    "institution",
+    "academic_period",
+    "course",
+    "curricula",
+    "prerequisites",
+    "syllabus",
+    "objectives",
+    "content_program",
+    "teaching_methods",
+    "learning_experiences",
+    "assessment"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "document_id": { "type": "string", "minLength": 1 },
+    "institution": { "type": "string", "minLength": 1 },
+    "academic_period": { "type": ["string", "null"] },
+    "course": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "name", "credits", "workload"],
+      "properties": {
+        "code": { "type": ["string", "null"] },
+        "name": { "type": "string", "minLength": 1 },
+        "credits": { "type": ["integer", "number", "null"], "minimum": 0 },
+        "workload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["unit", "total"],
+          "properties": {
+            "unit": { "enum": ["hours", "class_hours"] },
+            "theoretical": { "type": ["integer", "number"], "minimum": 0 },
+            "practical": { "type": ["integer", "number"], "minimum": 0 },
+            "total": { "type": ["integer", "number"], "minimum": 0 },
+            "collective": { "type": ["integer", "number"], "minimum": 0 },
+            "autonomous": { "type": ["integer", "number"], "minimum": 0 },
+            "individual": { "type": ["integer", "number"], "minimum": 0 },
+            "extension": { "type": ["integer", "number"], "minimum": 0 }
+          }
+        }
+      }
+    },
+    "curricula": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["program", "recommended_stage", "recommended_stage_status", "nature"],
+        "properties": {
+          "program": { "type": "string", "minLength": 1 },
+          "recommended_stage": { "type": ["integer", "string", "null"] },
+          "recommended_stage_status": { "enum": ["explicit", "blank_in_source"] },
+          "nature": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "prerequisites": {
+      "type": ["array", "null"],
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "syllabus": { "type": ["string", "null"] },
+    "objectives": { "type": ["string", "null"] },
+    "content_program": { "type": ["string", "null"] },
+    "teaching_methods": { "type": ["string", "null"] },
+    "learning_experiences": { "type": ["string", "null"] },
+    "assessment": { "type": ["string", "null"] }
+  }
+}

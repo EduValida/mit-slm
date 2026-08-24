@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "document_id": "01605_EMB5005_20261",
+  "institution": "Universidade Federal de Santa Catarina (UFSC)",
+  "academic_period": "2026-1",
+  "course": {
+    "code": "EMB 5005",
+    "name": "Geometria Analítica",
+    "credits": 4,
+    "workload": {
+      "unit": "class_hours",
+      "total": 72
+    }
+  },
+  "curricula": null,
+  "prerequisites": [],
+  "syllabus": "Matrizes. Determinantes. Sistemas lineares. Álgebra vetorial. Estudo da reta e do plano. Curvas planas. Superfícies.",
+  "objectives": "Ao concluir a disciplina de Geometria Analítica, o aluno deverá ser capaz de realizar operações com matrizes, calcular\na inversa de uma matriz, discutir e resolver sistemas lineares por escalonamento; Efetuar operações vetoriais, calcular\no produto escalar, o produto vetorial e misto, bem como utilizar suas interpretações geométricas; Aplicar o conceito de\nmatrizes e vetores para resolver problemas de retas e planas; Identificar uma curva plana, reconhecer seus elementos e\nrepresentá-la graficamente; Resolver problemas práticos utilizando os conceitos aprendidos em Geometria Analítica.",
+  "content_program": "Unidade 1 - Matrizes\nDefinição de Matrizes, matriz quadrada, matriz zero, igualdade de matrizes, adição de matrizes, produto\nde uma matriz por um escalar, produto entre matrizes, matriz transposta, matriz simétrica, matriz antissimétrica, matriz ortogonal, matriz triangular superior, matriz triangular inferior e potência de matrizes.\n\nUnidade 2 - Determinantes e Inversão de Matrizes e Sistema de Equações Lineares\nDeterminantes: Propriedades do determinante. Matriz Inversa: Propriedades da Inversa, matrizes elementares e inversão, método para inversão de matrizes. Equação linear, sistemas de equações lineares,\nsolução de um sistema linear, sistema compatível, sistemas equivalentes, operações elementares e sistemas equivalentes, sistema linear homogêneo.\n\nUnidade 3 - Introdução Vetores no Plano e no Espaço\nIntrodução, a noção de vetor, soma de vetores, multiplicação por escalar.\n\nUnidade 4 - Produtos de Vetores no Espaço\nProdutos de vetores, norma e produto escalar, projeção ortogonal, produto vetorial e produto misto.\n\nUnidade 5 - Retas e Planos\nEquações de retas e planos: Equações do plano, equações da reta. Posições relativas de retas e planos.\n\nUnidade 6 - Distâncias\nDistância de um ponto a um plano, distância de um ponto a uma reta, distância entre dois planos,\ndistância entre duas retas.\n\nUnidade 7 - Seções Cônicas\nCônicas não degeneradas: Elipse, hipérbole, parábola. Caracterização das cônicas.\n\nUnidade 8 - Quádricas\nElipsoide, hiperboloide, paraboloide, cone elíptico. Superfícies cilíndricas.",
+  "teaching_methods": "O conteúdo programático será desenvolvido através de aulas expositivas e dialogadas. Será utilizado recursos audiovisuais e quadro negro nas aulas.",
+  "learning_experiences": null,
+  "assessment": "A avaliação será feita através de três provas, sendo a nota final a média aritmética simples das mesmas."
+}

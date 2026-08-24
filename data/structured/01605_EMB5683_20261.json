@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "document_id": "01605_EMB5683_20261",
+  "institution": "Universidade Federal de Santa Catarina (UFSC)",
+  "academic_period": "2026/1",
+  "course": {
+    "code": "EMB5683",
+    "name": "Introdução à Engenharia Mecatrônica",
+    "credits": 2,
+    "workload": {
+      "unit": "class_hours",
+      "total": 36
+    }
+  },
+  "curricula": null,
+  "prerequisites": [],
+  "syllabus": "Contextualização à vida acadêmica (a universidade, o curso de engenharia de Engenharia Mecatrônica, o\ncurrículo, serviços de apoio, laboratórios). Funções do engenheiro no contexto tecnológico e social.\nFundamentos básicos da Engenharia Mecatrônica: Sistemas Elétricos, Sistemas Mecânicos e Sistemas\nComputacionais. O mercado de trabalho e atribuições profissionais para o Engenheiro Mecatrônico.\nPrevenção e combate a incêndio e desastres.",
+  "objectives": "Sendo a engenharia mecatrônica uma engenharia multidisciplinar que compreende áreas de conhecimentos\nem engenharia mecânica, elétrica, de computação e de controle, esta disciplina visa dar ao aluno uma visão\nde como as áreas citadas estarão integradas na composição dos sistemas mecatrônicos.",
+  "content_program": "Contextualização à vida acadêmica (a universidade, o curso de Engenharia da Mecatrônica, o currículo,\nserviços de apoio, laboratórios). Contextualização à vida profissional. Funções do engenheiro no contexto\ntecnológico e social. Introdução de tópicos relacionados com as várias áreas que compõem a engenharia\nmecatrônica. Introdução à eletrônica: componentes, símbolos, diagrama esquemático. Simulação de\ncircuitos; montagem prática de circuitos. Introdução aos microprocessadores e uso de simulador Arduino.",
+  "teaching_methods": "O conteúdo programático será abordado em aulas teóricas e práticas.\n\nAulas teóricas: além dos conceitos citados no conteúdo programático, serão abordados conceitos básicos\nsobre eletrônica e programação de Arduino. Aulas práticas: Visam à realização de experiências práticas\nsimples, utilizando kits de eletrônica e de simuladores computacionais plataforma Autodesk TinkerCad.\nTambém, está previsto o aprendizado de alguns instrumentos e equipamentos no laboratório de circuitos\nelétricos.",
+  "learning_experiences": null,
+  "assessment": "Para a avaliação será exigido dos alunos a apresentação de uma monografia versando sobre as diversas\náreas de conhecimentos e tecnologias que envolvem a engenharia mecatrônica. A média será calculada\nlevando em consideração o manuscrito (M) e a apresentação oral do trabalho (A). A média final (MF) será\ncalculada da seguinte forma:\nMF = 0,5M + 0,5A ≥ 6,0\n\nSerá considerado aprovado o estudante que alcançar uma média de igual ou superior a 5,75 na disciplina,\ndesde que tenha um mínimo de 75% da carga horária da disciplina (art.72 e art. 69 § 2o da Resolução\n017/Cun/97). Caso o estudante tenha obtido uma média entre 3,0 e 5,5 e tenha frequência suficiente, poderá\nrealizar uma avaliação de recuperação envolvendo todo o conteúdo da disciplina. Com a nota obtida nessa\navaliação de recuperação mais a média das avaliações parciais (art. 70 § 2o da Resolução 017/Cun/97), será\ncalculada uma média aritmética. Se esta nota for igual ou superior a 6,0 o aluno será aprovado e essa será\nsua nota final. Caso a frequência do aluno seja inferior a 75% da carga horária da disciplina ele estará\nautomaticamente reprovado com nota zero, independente das notas obtidas nas avaliações parciais (art. 69\n§ 2o da Resolução 017/Cun/97)."
+}

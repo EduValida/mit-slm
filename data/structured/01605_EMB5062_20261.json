@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "document_id": "01605_EMB5062_20261",
+  "institution": "Universidade Federal de Santa Catarina (UFSC)",
+  "academic_period": "2026/1",
+  "course": {
+    "code": "EMB 5062",
+    "name": "Comunicação e Expressão",
+    "credits": 2,
+    "workload": {
+      "unit": "class_hours",
+      "total": 36
+    }
+  },
+  "curricula": null,
+  "prerequisites": [],
+  "syllabus": "Leitura e interpretação de textos técnicos e científicos da área da Engenharia. Estudo teórico e prático de textos\ntécnicos e científicos relevantes à execução de atividades acadêmicas, como fichamento, resumo, resenha, artigo,\nseminário. Normas da ABNT relevantes à produção/elaboração de textos acadêmicos. Linguagem técnica e\ncientífica. Normas gramaticais vigentes. Exercício de apropriação de textos da área da Engenharia.",
+  "objectives": "Fornecer ao graduando subsídios: (i) para o aprimoramento da escrita acadêmica, bem como de técnicas de oratória\ne engajamento com o público; (ii) para o uso adequado de normas da Associação Brasileira de Normas Técnicas\n(ABNT) voltadas à elaboração de textos acadêmicos; e (iii) para a compreensão e apropriação de textos técnicos e\ncientíficos da área da Engenharia. Desse modo, ao final do semestre, espera-se que o aluno seja capaz de\nelaborar/produzir diferentes gêneros textuais utilizados na esfera acadêmica.",
+  "content_program": "1 Introdução: Linguagem e comunicação.\n1.1 Comunicação.\n1.2 Processo da comunicação.\n1.3 Elementos essenciais do processo da comunicação.\n1.4 Linguagem (científica e técnica) – Língua – Fala.\n1.5 O signo linguístico.\n1.6 Níveis da linguagem.\n1.7 Funções da linguagem.\n\n2 Noções introdutórias: o texto e suas propriedades.\n\n3 Tipos de argumentos na produção escrita.\n\n4 Gêneros textuais acadêmicos. (Exercício de apropriação - leitura, interpretação e produção - de textos da área da\nEngenharia).\n\n4.1 Noções introdutórias: Fichamento.\n4.1.1 Conceituação, características, análise, elaboração/produção de fichamento.\n\n4.1.2 Normas da Associação Brasileira de Normas Técnicas (ABNT) pertinentes à elaboração/produção de\nfichamentos.\n4.1.3 Aprimoramento da escrita: Revisando algumas regras ortográficas.\n\n4.2 Noções introdutórias: Resumo.\n4.2.1 Conceituação, características, tipos, análise, elaboração/produção de resumo.\n4.2.2 Considerações da Associação Brasileira de Normas Técnicas (ABNT) sobre resumo.\n4.2.3 Aprimoramento da escrita: Revisando algumas regras concernentes à concordância verbal.\n\n4.3 Noções introdutórias: Resenha.\n4.3.1 Conceituação, características, elaboração/produção de resenha.\n4.3.2 Estrutura básica de uma resenha.\n4.3.3 Considerações da Associação Brasileira de Normas Técnicas (ABNT) sobre resenha.\n4.3.4 Aprimoramento da escrita: Revisando algumas regras concernentes à concordância nominal.\n\n4.4 Noções introdutórias: Projeto de pesquisa.\n4.4.1 Estrutura e elaboração de projeto de pesquisa.\n4.4.2 Normas da Associação Brasileira de Normas Técnicas (ABNT) relevantes à elaboração/produção de projetos\nde pesquisa.\n4.3.4 Aprimoramento da escrita: Revisando algumas regras concernentes à regência verbal.\n\n4.5 Noções introdutórias: Artigo acadêmico.\n4.5.1 Finalidade sociocomunicativa, características, análise de artigo técnico e/ou científico.\n4.5.2 Estrutura de um artigo: elementos pré-textuais, textuais e pós-textuais.\n4.5.3 Normas da Associação Brasileira de Normas Técnicas (ABNT) relevantes à elaboração/produção de artigo\ntécnico e/ou científico.\n4.5.4 Aprimoramento da escrita: Revisando algumas regras concernentes à regência nominal.\n\n4.6 Seminário acadêmico.\n4.6.1 Atividades iniciais: ler e pesquisar.\n4.6.2 Produção de esquema ou handout.\n4.6.3 Como planejar/organizar/produzir um seminário.\n4.6.4 Aprimoramento da escrita: Revisando algumas regras concernentes ao emprego da vírgula.",
+  "teaching_methods": "- As aulas serão expositivas e dialogadas, complementadas por atividades práticas relacionadas aos conteúdos\ndiscutidos durante as aulas presenciais.",
+  "learning_experiences": null,
+  "assessment": "A avaliação da disciplina será composta por duas (02) provas escritas e um (01) trabalho/seminário.\n\nProvas\nCada prova terá valor total de 10,0 pontos, distribuídos da seguinte maneira:\n- Prova 01: 7,0 pontos referentes à prova escrita e 3,0 pontos provenientes de trabalhos complementares.\n- Prova 02: 7,0 pontos referentes à prova escrita e 3,0 pontos provenientes de trabalhos complementares.\nTrabalho\n- Trabalho/Seminário: 10,0 pontos.\n\nA média final é calculada por:\nMédia = (Prova 1 + Prova 2 + Trabalho/Seminário) / 3"
+}

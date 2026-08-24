@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "document_id": "02605_EMB5007_20261",
+  "institution": "Universidade Federal de Santa Catarina (UFSC)",
+  "academic_period": "2026/01",
+  "course": {
+    "code": "EMB5007",
+    "name": "Álgebra Linear",
+    "credits": 4,
+    "workload": {
+      "unit": "class_hours",
+      "total": 72
+    }
+  },
+  "curricula": null,
+  "prerequisites": [
+    "Geometria Analítica"
+  ],
+  "syllabus": "Espaço vetorial. Transformações lineares. Mudança de base. Produto interno. Transformações ortogonais.\nAutovalores e autovetores de um operador. Diagonalização.",
+  "objectives": "A disciplina deverá ser capaz de:\n• fornecer uma base teórico-prática sólida na teoria dos espaços vetoriais e dos operadores lineares de\nmaneira a possibilitar sua aplicação nas diversas áreas da ciência e da tecnologia;\n• desenvolver no aluno a capacidade de formulação e interpretação de situações matemáticas;\n• desenvolver no aluno o espírito crítico e criativo.",
+  "content_program": "Unidade 1. Espaços Vetoriais\n1.1. Espaço vetorial real: definição e propriedades.\n1.2. Subespaços vetoriais\n1.3. Interseção e soma de subespaços vetoriais\n1.4. Combinação linear\n1.5. Subespaços gerados\n1.6. Dependência e independência linear\n1.7. Base e dimensão de um espaço vetorial\n1.8. Definição de vetor-coordenada e de matriz-coordenada\n1.9. Espaços vetoriais isomorfos.\n\nUnidade 2. Produto Interno\n2.1. Produto interno em espaços vetoriais\n2.2. Módulo de um vetor: propriedades\n2.3. Ângulo de dois vetores\n2.4. Vetores ortogonais\n2.5. Base ortogonal\n\n2.6. Base ortonormal\n2.7. Processo de ortogonalização de Gram-Schmidt. Componentes de um vetor numa base ortogonal\n2.8. Complemento ortogonal\n\nUnidade 3. Transformações Lineares\n3.1. Transformação linear: definição e propriedades\n3.2. Núcleo de uma transformação linear\n3.3. Imagem de uma transformação linear\n3.4. Isomorfismo\n3.5. Matriz de uma transformação linear\n3.6. Operações com transformações lineares: adição, multiplicação por escalar e composição\n3.7. Transformações lineares planas\n3.8. Transformações lineares no espaço\n\nUnidade 4. Operadores Lineares\n4.1. Operadores inversíveis: determinação de transformação linear inversa através da forma matricial\n4.2. Mudança de base\n4.3 Matrizes Semelhantes\n4.4. Operador ortogonal, matriz ortogonal.\n4.5. Operador simétrico (auto-adjunto), matriz simétrica.\n\nUnidade 5. Autovalores e Autovetores\n5.1. Autovalores e autovetores: definição e determinação.\n5.2. Propriedades dos autovalores e autovetores\n5.3. Diagonalização de operadores",
+  "teaching_methods": "Os conteúdos serão desenvolvidos por meio de aulas expositivas e dialogadas ministradas pelo professor\nresponsável aos alunos da disciplina. Também ocorrerá a resolução de exercícios propostos e discussões\nsobre eventuais dúvidas.",
+  "learning_experiences": null,
+  "assessment": "Tipo de Avaliação Nota Atribuída\nProva 1 1/3 da média\nProva 2 1/3 da média\nProva 3 1/3 da média"
+}

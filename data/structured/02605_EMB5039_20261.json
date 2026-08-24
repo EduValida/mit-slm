@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "document_id": "02605_EMB5039_20261",
+  "institution": "Universidade Federal de Santa Catarina (UFSC)",
+  "academic_period": "2026/1",
+  "course": {
+    "code": "EMB5039",
+    "name": "Física II",
+    "credits": 4,
+    "workload": {
+      "unit": "class_hours",
+      "total": 72
+    }
+  },
+  "curricula": null,
+  "prerequisites": [
+    "Cálculo Diferencial e Integral I (EMB5001) e Física I (EMB5034)."
+  ],
+  "syllabus": "Gravitação. Oscilações. Ondas mecânicas e acústicas. Estática e dinâmica de fluidos. Temperatura. Calor.\nTeoria cinética dos gases. Leis da Termodinâmica. Máquinas térmicas. Refrigeradores. Entropia.\nAtividades Laboratoriais.",
+  "objectives": "O principal objetivo da disciplina é desenvolver a capacidade dos estudantes em compreender e analisar\nfenômenos físicos presentes em diferentes tipos de sistemas mecânicos e térmicos. Em particular, a\ndisciplina abordará tópicos relativos a fenômenos gravitacionais, oscilatórios, ondulatórios, bem como a\nestática e dinâmica de fluidos. Além disso, o estudante será exposto a conceitos-chave como temperatura,\ncalor, teoria cinética dos gases e leis básicas que regem o funcionamento de sistemas termodinâmicos, como\nmáquinas e refrigradores térmicos. Os alunos de engenharia poderão aplicar o conhecimento adquirido em\nprojetos de sistemas de propulsão, refrigeração, aquecimento entre outros, contribuindo para o\ndesenvolvimento de soluções eficientes e inovadoras no campo da engenharia.",
+  "content_program": "Unidade 1: Gravitação\nUnidade 2: Oscilações\nUnidade 3: Ondas Mecânicas e Acústicas\nUnidade 4: Estática e Dinâmica dos fluidos\nUnidade 5: Temperatura, Calor e Primeira Lei da Termodinâmica\nUnidade 6: Teoria Cinética dos Gases\nUnidade 7: Entropia e a Segunda Lei da Termodinâmica",
+  "teaching_methods": "O conteúdo programático detalhado acima será abordado em aulas expositivas, baseadas na apresentação\nde aspectos teóricos, exemplos práticos e solução de problemas.",
+  "learning_experiences": null,
+  "assessment": "Baseia-se na aplicação de 3 (três) avaliações parciais (P1, P2 e P3), previamente marcadas no cronograma.\nA média final (MF) será calculada da seguinte forma: 𝑀𝐹 = (𝑃1 + 𝑃2 + 𝑃3) /3. Será considerado(a)\naprovado(a) o(a) estudante que alcançar uma média igual ou superior a 5,75 na disciplina, desde que tenha\num mínimo de 75% da carga horária da disciplina (Art. 69 § 2o da Resolução 017/Cun/97)."
+}

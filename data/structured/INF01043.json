@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "document_id": "INF01043",
+  "institution": "Universidade Federal do Rio Grande do Sul (UFRGS)",
+  "academic_period": "2026/2",
+  "course": {
+    "code": "INF01043",
+    "name": "INTERAÇÃO HUMANO-COMPUTADOR E EXPERIÊNCIA DO USUÁRIO",
+    "credits": 4,
+    "workload": {
+      "unit": "hours",
+      "theoretical": 30,
+      "practical": 30,
+      "total": 60,
+      "collective": 43,
+      "autonomous": 17,
+      "individual": 0,
+      "extension": 0
+    }
+  },
+  "curricula": [
+    {
+      "program": "BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO",
+      "recommended_stage": 4,
+      "recommended_stage_status": "explicit",
+      "nature": "Obrigatória"
+    }
+  ],
+  "prerequisites": null,
+  "syllabus": "Design de interação, conceitos básicos, metas de acessibilidade, usabilidade, Experiência do Usuário (UX), cognição, percepção,\nmemória, aprendizado. Estilos de interação, metáfora, paradigmas. Design de interação: visão geral do processo e metodologias de\npesquisa em UX (UX Research). Análise contextual: modelo do usuários (personas), cenários de uso (jornadas), modelo de tarefas.\nProjeto e prototipação de interfaces (protótipos de baixa fidelidade, alta fidelidade, protótipos funcionais, prototipação no code e em\nhardware). Avaliação de interfaces (técnicas sem usuário). Avaliação de interfaces (técnicas com usuários: formativas e somativas,\nimplicações éticas e cuidados). Análise de resultados (qualitativos e quantitativos). UX Analytics.",
+  "objectives": "Transmitir aos estudantes os conceitos básicos de interação humano-computador e experiência do usuário, indispensáveis para o\ndesenvolvimento de aplicativos interativos, bem como para a concepção de novas técnicas e dispositivos de interação.\n\nA disciplina visa desenvolver as seguintes habilidades específicas:\n\n- Conduzir um processo de concepção e projeto de interfaces centrado no usuário e em suas necessidades\n- Ser capaz de escolher e aplicar a técnica de avaliação de interfaces adequada a cada situação\n- Compreender e identificar as potenciais vantagens no uso de Realidade Virtual e Realidade Aumentada como espaço de\ncomunicação",
+  "content_program": "Semana: 1 a 2\nTítulo: Introdução e Fundamentos\nConteúdo: Design de interação e sua importância no contexto de Engenharia de Software. Fundamentos de IHC e UX\nSemana: 2 a 3\nTítulo: Design de Interação\nConteúdo: Etapas do Design de Interação e metodologia de pesquisa em UX. Estilos de interação.\nSemana: 4 a 8\nTítulo: Etapas do design de interação\nConteúdo: Modelagem de usuários. Modelagem de tarefas. Prototipação.\nSemana: 9 a 12\nTítulo: Avaliação de interfaces\nConteúdo: Técnicas e ferramentas para avaliação formativa e avaliação somativa.\nSemana: 13 a 14\nTítulo: Análise de dados\n\nConteúdo: Métodos e ferramentas de análise de dados obtidos em avaliações.\nSemana: 15\nTítulo: Projeto final\nConteúdo: Apresentação e avaliação do projeto final",
+  "teaching_methods": "A disciplina é apresentada em aulas teórico-práticas, em que se combina a apresentação dos conceitos e técnicas com o\ndesenvolvimento de exercícios e discussões. Algumas das aulas serão realizadas em laboratório para a experimentação ou\nimplementação dos conceitos vistos em aula.\n\nA disciplina utilizará o sistema Moodle/UFRGS para distribuição de material, entrega de trabalhos, organização de grupos de\ndiscussão e acompanhamento geral da disciplina.\n\nAs 60 horas previstas para atividades teóricas e práticas indicadas neste Plano de Ensino incluem 26 encontros de 100 minutos de\nduração (2 períodos de 50 minutos por encontro, 2 encontros por semana, distribuídos em 15 semanas), num total de 2.600 minutos,\ne mais 16,66 horas (1000 minutos) de atividades autônomas, realizadas sem contato direto com o(a) professor(a), correspondentes a\nexercícios e trabalhos extraclasse a serem avaliados.",
+  "learning_experiences": "São experiências de aprendizagem oferecidas aos alunos:\n- Participar de aulas expositivas dialogadas e realizar leitura de material disponibilizado e/ou assistir vídeos ou vídeoaulas\n- Realizar exercícios sobre os conceitos apresentados em sala de aula.\n- Aplicar o conhecimento adquirido no desenvolvimento de um trabalho prático (projeto final), envolvendo a concepção e prototipação\nda interface de uma aplicação escolhida.",
+  "assessment": "O aluno será avaliado com base na participação positiva em aula e no desempenho na prova, exercícios e trabalhos extra-classe. A\nprova, trabalhos e exercícios serão avaliados com nota entre 0.0 e 10.0. Conforme regimento da Universidade, a frequência às aulas\né obrigatória levando-se em consideração para aprovação os limites estabelecidos pela UFRGS.\n\nSerá realizada uma prova única abrangendo todo o conteúdo coberto no período que antecede a mesma. Exercícios em sala de aula\npoderão ser realizados sem aviso prévio e serão considerados como parte da nota final. Será realizado um projeto prático dividido\nem três partes: projeto, prototipação e avaliação. Os pesos de cada uma das partes na nota serão determinados da seguinte forma:\n30% para projeto (primeira apresentação), 30% para implementação (segunda apresentação) e 40% para avaliação (terceira\napresentação).\n\nCaso o aluno tenha nota menor que 5.0 (cinco) na prova ou no projeto final, estará automaticamente em recuperação.\n\nA média final da disciplina será calculada da seguinte forma:\nMédia = 0.4 * Prova + 0.2 * Exercícios + 0.4 * Projeto\n\nA nota será calculada com duas (2) casas decimais, e posteriormente arredondada para uma casa decimal. Será considerado\naprovado o aluno que cumprir com todas as 4 exigências abaixo listadas:\n\n* frequência >= 75%\n* média >= 6.0\n* nota da prova >= 5.0 e\n* nota do projeto >= 5.0\n\nObedecidas as exigências acima, o conceito final será dado da seguinte forma:\nA : Média >= 9.0\nB : 7.5 >= Média < 9.0\nC : 6.0 >= Média < 7.5\nD: Freq >= 75% e (Média < 6.0 ou Prova < 5.0 ou Trabalho < 5.0)\nFF: Freq < 75%"
+}

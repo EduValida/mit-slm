@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "document_id": "01605_EMB5055_20261",
+  "institution": "Universidade Federal de Santa Catarina (UFSC)",
+  "academic_period": "2026/1",
+  "course": {
+    "code": "EMB 5055",
+    "name": "Representação Gráfica",
+    "credits": 3,
+    "workload": {
+      "unit": "class_hours",
+      "total": 54
+    }
+  },
+  "curricula": null,
+  "prerequisites": [],
+  "syllabus": "Noções fundamentais para elaboração e interpretação de esboços e desenhos técnicos,\nelementos básicos de construção reta, plano e ponto. Construção de objetos envolvendo\nintersecção, secção, planificação e modelagem. Aplicação das projeções nos desenhos\nde engenharia por meio manual e computacional.",
+  "objectives": "Aprimorar a percepção do espaço e raciocínio espacial, de forma a capacitar o aluno\npara desenvolver e interpretar a informação gráfica, utilizando a técnica de\nrepresentação mongeana (suportada pelas teorias de funcionamento do sistema visual\nhumano), bem como desenhos de perspectivas isométricas e desenhos em projeções\nortográficas em três vistas (dentro das normas técnicas da ABNT). Representar, com\nuso de CAD, o desenho de conjunto de modelos de máquinas, dispositivos ou\nestruturas, com suas partes montadas.",
+  "content_program": "Unidade 1. Introdução ao Esboço\n1.1 – Fundamentos de CAD.\n1.3 – Esboço a Mão Livre:\n1.3.1 – Fundamentos do Esboço.\n1.3.2 – Vistas Ortogonais.\n1.3.3 – Perspectiva Isométrica.\nUnidade 2. Desenho Geométrico\n2.1 – Introdução ao Desenho Técnico.\n2.2 – Fundamentos do Desenho Geométrico.\n2.3 – Construções Geométricas e Tangência.\n2.4 – Polígonos e Padrões Geométricos.\n2.5 – Concordância e Cônicas.\n\nUnidade 3. Projeções Ortográficas\n3.1 – Funcionamento do sistema visual humano.\n3.2 - Fundamentos de Projeções (Geometria Descritiva):\n3.2.1 – Normas de Desenho.\n3.2.2 – Representação no 1o e 3o Diedro.\n3.3 – Sólidos Geométricos e Modelamento Sólido.\n3.4 – Desenho Técnico:\n3.4.1 – Fundamentos da Geometria Descritiva.\n3.4.2 – Projeções Ortográficas em 3 vistas.\n3.4.3 – Supressão de Vistas, Cotagem e Escala.\n3.4.4 – Vistas Seccionadas: Cortes, Seções e Rupturas.\n3.4.5 – Vistas Auxiliares.\nUnidade 4. Perspectiva isométrica\n4.1 – Perspectiva Isométrica.\n4.2 – Desenho de Conjunto com CAD.\nUnidade 5. Noções computacionais para representação gráfica",
+  "teaching_methods": "Os conteúdos serão desenvolvidos com aulas expositivas (teóricas) e práticas\n(resoluções de exercícios). A resolução de exercícios propostos e discussões sobre\neventuais pontos que possam provocar alguma forma de dúvida serão desenvolvidas nas\naulas práticas em grupo ou de forma individual. A presença da monitoria auxilia no\nprocesso de entendimento da disciplina e posteriores dúvidas.",
+  "learning_experiences": null,
+  "assessment": "Serão realizadas 3 avaliações parciais, previamente marcadas no cronograma, das quais\nserá calculada a média ponderada, onde MD é a média semestral, P1 e P2 são as notas\nparciais individuais e P3 é a avaliação de um projeto em grupo. Não serão aceitos\ntrabalhos ou exercícios em atraso.\nMD = 0,7 × ((P1 + P2) / 2) + 0,3 × P3"
+}

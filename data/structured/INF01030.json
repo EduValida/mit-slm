@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "document_id": "INF01030",
+  "institution": "Universidade Federal do Rio Grande do Sul (UFRGS)",
+  "academic_period": "2026/2",
+  "course": {
+    "code": "INF01030",
+    "name": "VISÃO COMPUTACIONAL II",
+    "credits": 4,
+    "workload": {
+      "unit": "hours",
+      "theoretical": 50,
+      "practical": 10,
+      "total": 60,
+      "collective": 50,
+      "autonomous": 10,
+      "individual": 0,
+      "extension": 0
+    }
+  },
+  "curricula": [
+    {
+      "program": "BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO",
+      "recommended_stage": null,
+      "recommended_stage_status": "blank_in_source",
+      "nature": "Eletiva"
+    },
+    {
+      "program": "ENGENHARIA DE COMPUTAÇÃO",
+      "recommended_stage": null,
+      "recommended_stage_status": "blank_in_source",
+      "nature": "Eletiva"
+    }
+  ],
+  "prerequisites": null,
+  "syllabus": "Revisão de Modelos de Câmeras e Percepção Visual; Espaços de Cores; Transformada Wavelet; Filtragem Avançada de Imagens\n(Filtros Cientes a Bordas, Filtragem usando Equações Diferenciais Parciais); Técnicas Avançadas de Segmentação de Imagens;\nRepresentação e Análise de Texturas; Detecção de Curvas e Linhas; Casamento Estéreo e Structure-from-Motion; Detecção e\nCasamento de Pontos-Chave; Detecção e Rastreamento de Objetos; Fluxo Ótico.",
+  "objectives": "A disciplina visa desenvolver as seguintes habilidades específicas:\n- CG-H-008 - Desenvolver, implementar e avaliar aplicações que manipulam a representação digital de dados visuais, como imagens\ne vídeos, utilizando com plena capacidade os princípios matemáticos associados\n- CG-H-009 - Compreender a relação entre representações digitais e os fenômenos visuais que ali estão codificados\n- CG-H-010 - Desenvolver, implementar e avaliar soluções capazes de extrair informações relevantes a partir de dados visuais",
+  "content_program": "Semana: 1 a 2\nTítulo: Percepção visual e modelos de câmera\nConteúdo: 1.1 Apresentação da disciplina e conceitos básicos\n1.2 Formação de imagens e modelos de câmera\n1.3 Calibração de câmeras\n1.4 Percepção visual e espaços de cores\nSemana: 3 a 4\nTítulo: Filtragem e Segmentação de imagens\nConteúdo: 2.1Técnicas avançadas de filtragem de imagens\n2.2Técnicas avançadas de segmentação de imagens\nSemana: 5 a 6\nTítulo: Análise de textura e formas\nConteúdo: 3.1 Descritores de textura\n3.2 Detecção de linhas - Transformada Hough\n3.3 Detecção de curvas paramétricas: Hough generalizado, ajuste robusto de curvas\n3.4 Descritores de forma\nSemana: 7 a 8\nTítulo: Reconstrução 3D\nConteúdo: 4.1 Revisão de estereoscopia\n\n4.2 Algoritmos para casamento estéreo\n4.3 Structure from Motion\nSemana: 9 a 12\nTítulo: Extração e Casamento de pontos-chave, Detecção e Rastreamento de Objetos\nConteúdo: 5.1 Técnicas clássicas de extração e casamento de pontos-chave\n5.2 Técnicas de deeep learning para extração e casamento de pontos-chave\n5.3 Detecção de objetos\n5.4 Rastreamento de objetos\nSemana: 13 a 14\nTítulo: Fluxo ótico\nConteúdo: 6.1 Definição matemática de fluxo ótico\n6.2 Algoritmos para cálculo do fluxo ótico\nSemana: 15\nTítulo: Avaliações e Apresentação de Trabalhos\nConteúdo: Avaliações e Apresentação de Trabalhos",
+  "teaching_methods": "A disciplina utilizará o sistema Moodle/UFRGS para distribuição de material, entrega de trabalhos, organização de grupos de\ndiscussão e acompanhamento geral da disciplina.\n\nAs 60 horas previstas para atividades teóricas e práticas indicadas neste Plano de Ensino incluem 30 encontros de 100 minutos de\nduração (2 períodos de 50 minutos por encontro, 2 encontros por semana, durante 15 semanas), num total de 3.000 minutos, e mais\n10 horas (600 minutos) de atividades autônomas, realizadas sem contato direto com o professor, correspondentes a exercícios e\ntrabalhos extraclasse, conforme Resolução 11/2013 do CEPE/UFRGS, Artigos 36 a 38.O professor poderá se valer de aulas\npresenciais e de atividades a distância (desde que nos limites previstos pela UFRGS para disciplinas presenciais e empregando\nferramentas para atividades remotas), assim como do apoio de Professores Assistentes (Alunos de Pós-Graduação) em Atividades\nDidáticas. O conteúdo da disciplina é abordado tanto em aulas expositivas como em trabalhos práticos. Os assuntos são\ncomplementados e reforçados através da realização de exercícios em aula ou extra-classe e do desenvolvimento de programas.",
+  "learning_experiences": "Ao longo do semestre, serão realizados:\n1) Trabalhos de Implementação (TIs) realizados ao longo do semestre. Nestes trabalhos, os estudantes serão solicitados a\nexecutar, modificar, complementar, estender e desenvolver códigos visando a fixação dos conhecimentos estudados;\n\n2) Um Trabalho Final (TF) realizado ao final da disciplina. O projeto prevê uma implementação, escrita de relatório e apresentação\ndos resultados para a turma;\n\n3) Uma prova abrangendo todo conteúdo da disciplina.",
+  "assessment": "A avaliação será feita a partir de uma nota de prova (NP), dois trabalhos de implementação (TI1 e TI2), e um trabalho final (TF) a ser\nentregue e apresentado em aula. A nota final (NF) será obtida considerando a seguinte ponderação:\n\nNF = 0,25 * NP + 0,2 * TI1 + 0,2 * TI2 + 0,35 * TF\n\nO conceito final será obtido através da seguinte conversão:\n9,0 ≤ NF ---> A\n\n7,5 ≤ NF < 9,0 ---> B\n6,0 ≤ NF < 7,5---> C\n4,0 ≤ NF < 6,0---> recuperação (ver abaixo)\nNF < 4,0 ---> D\n\nObs: Independente da nota final NF, o conceito FF será atribuído ao aluno que não alcançar a frequência mínima (75%), de acordo\ncom o regimento da UFRGS."
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "document_id": "INF01015",
+  "institution": "Universidade Federal do Rio Grande do Sul (UFRGS)",
+  "academic_period": "2026/2",
+  "course": {
+    "code": "INF01015",
+    "name": "GERÊNCIA E APLICAÇÕES EM REDES",
+    "credits": 4,
+    "workload": {
+      "unit": "hours",
+      "theoretical": 40,
+      "practical": 20,
+      "total": 60,
+      "extension": 0
+    }
+  },
+  "curricula": [
+    {
+      "program": "BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO",
+      "recommended_stage": null,
+      "recommended_stage_status": "blank_in_source",
+      "nature": "Eletiva"
+    },
+    {
+      "program": "ENGENHARIA DE COMPUTAÇÃO",
+      "recommended_stage": null,
+      "recommended_stage_status": "blank_in_source",
+      "nature": "Eletiva"
+    }
+  ],
+  "prerequisites": null,
+  "syllabus": "1. Visão geral dos componentes das redes, seu uso e formas de gerenciamento: 1.1 Componentes físicos: modens, linhas, CHUBS,\npontes, roteadores, servidores, estações de trabalho, etc. 1.2 Componentes lógicos: recursos de informação e aplicações. 2.\nArquiteturas de gerenciamento de redes. 2.1 Protocolos de gerenciamento: OSI e SNMP. 2.2 Objetos gerenciados. 3.\nInteroperabilidade entre aplicações em rede: 3.1 Serviços e protocolos: internet: SMTP, FTP, GOPHER, WWW etc. OSI: X400, X500,\nFTTAM 2.2 API(Application Program Interface).",
+  "objectives": "Fornecer ao aluno uma visão ampla e abrangente das principais aplicações em diversos ambientes de redes de computadores.\nApresentar as principais metodologias de gerenciamento de redes. Estudar as APIs de programação mais utilizadas.",
+  "content_program": "Semana: 1\nTítulo: Introdução\nConteúdo: Evolução do gerenciamento das redes de computadores\nElementos de uma arquitetura de gerenciamento de redes\nVisão geral dos componentes das redes, seu uso e formas de gerenciamento\nSemana: 2\nTítulo: Network Operation Center (NOC)\nConteúdo: Objetivos de um NOC\nEstudos de caso\nSemana: 3 a 5\nTítulo: Arquiteturas de Gerenciamento de Redes\nConteúdo: A arquitetura de gerenciamento Internet (introdução ao SNMP; CMIP sobre TCP/IP)\nA arquitetura de gerenciamento OSI (introdução ao CMIP/CMISE)\nObjetos gerenciados\nSemana: 6 a 8\nTítulo: Management Information Base (MIB)\nConteúdo: Introdução às informações de gerenciamento e regras de codificação\nIntrodução à MIB\nO desenvolvimento da MIB\nMIB I e MIB II\nMIBs de uso específico\nRMON e RMON2\n\nMIBs privadas e acesso às MIBs\nSemana: 9 a 11\nTítulo: Simple Network Management Protocol (SNMP)\nConteúdo: Arquitetura e objetivos do SNMP\nOperações do SNMP\nSNMP Protocol Data Units (PDUs)\nExemplos de utilização\nSNMPv2\nSNMPv3\nEstudo de casos\nSemana: 12\nTítulo: Plataformas e Aplicações de Gerenciamento\nConteúdo: HP OpenView\nTNG Unicenter\nIBM NetView\nOutras\nSemana: 13 a 14\nTítulo: Tópicos avançados\nConteúdo: Gerenciamento baseado em políticas\nGerenciamento distribuído\nGerenciamento autonômico\nGerenciamento de TI orientado a negócios\nOutros\nSemana: 15\nTítulo: Verificação\nConteúdo: Verificação de cunho teórico-prático (P)",
+  "teaching_methods": "A disciplina é apresentada em aulas teórico-práticas. Nas aulas teóricas serão apresentados conceitos básicos e técnicas, as quais\nserão complementadas nas atividades práticas.",
+  "learning_experiences": "Serão realizadas uma verificação de aproveitamento de cunho teórico-prático (P), 2 (dois) trabalhos de cunho prático (T1 e T2) e\ndiversas atividades práticas (AP).",
+  "assessment": "Será realizada uma verificação de cunho teórico-prático (P), onde o aluno deverá ter conceito, no mínimo, igual a 5,0 (cinco). Haverá,\ntambém, 2 trabalhos extra-classe de cunho prático (T1 e T2), além de atividades desenvolvidas em aula (AP). Será considerado\naprovado o aluno que obtiver Média Final (MF) no mínimo 6,0 (seis). MF, para efeito dos conceitos de aprovação (A, B e C), é\ncalculada da seguinte forma: MF = (P + T1 + T2 + AP) / 4"
+}

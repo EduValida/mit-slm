@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "document_id": "02605_EMB5048_20261",
+  "institution": "Universidade Federal de Santa Catarina (UFSC)",
+  "academic_period": "2026/1",
+  "course": {
+    "code": "EMB5048",
+    "name": "Física I",
+    "credits": 4,
+    "workload": {
+      "unit": "class_hours",
+      "total": 72
+    }
+  },
+  "curricula": null,
+  "prerequisites": [],
+  "syllabus": "Unidades de medidas e vetores. Cinemática. Leis de Newton e aplicações. Trabalho e energia potencial.\nConservação da energia. Conservação do momento linear e angular. Rotação de corpos rígidos e rolamento.\nAtividades Laboratoriais.",
+  "objectives": "No decorrer do curso o aluno deve construir entendimento e domínio dos elementos da mecânica clássica\nreferentes à ementa acima, em seus conceitos e ferramental matemático, desenvolvendo sua capacidade de\naplicar tais conhecimentos a diversos casos particulares, com perspectiva à sua futura área de atuação.",
+  "content_program": "1. Unidades de Medida e Vetores:\nUnidades de medida e transformações de unidades. Vetores e suas operações. Derivadas.\n2. Cinemática:\nMovimento em 1 dimensão. Movimento em 2 e 3 dimensões. Movimento relativo.\n3. Leis de Newton e Aplicações:\nIntrodução à mecânica Newtoniana. Primeira lei de Newton. Segunda lei de Newton. Terceira lei\nde Newton. Forças específicas e movimento.\n4. Trabalho e Energia:\nTeorema do trabalho e energia cinética. Potência e trabalho.\n5. Conservação da energia:\nTrabalho de forças conservativas e energia potencial. Trabalho de forças não-conservativas e\nenergia mecânica. Princípio da conservação da energia.\n6. Conservação da Quantidade de Movimento:\n\n6.1. Quantidade de Movimento de uma Partícula:\nMomento Linear. Impulso de uma força e teorema impulso-momento linear. Conservação do\nmomento linear. Colisões.\n6.2. Centro de Massa e seu movimento.\n6.3. Quantidade de movimento de corpo rígido — Rotação do corpo rígido:\nCinemática da rotação. Dinâmica da rotação. Energia rotacional, trabalho e potência. Momento\nAngular. Conservação do Momento Angular.",
+  "teaching_methods": "Aulas dialogadas pela professora, baseadas na bibliografia e conforme cronograma apresentado na Seção\nIX abaixo. Serão disponibilizados, no ambiente virtual de aprendizagem (moodle), material de estudo e\nlistas de exercícios, sendo estas essenciais para a aprendizagem na disciplina.",
+  "learning_experiences": null,
+  "assessment": "A avaliação de desempenho é composta por quatro provas:\n- Prova 1 (P1): peso 20%, abrangendo o conteúdo das semanas 1 a 4.\n- Prova 2 (P2): peso 30%, abrangendo o conteúdo das semanas 5 a 9.\n- Prova 3 (P3): peso 25%, abrangendo o conteúdo das semanas 10 a 13.\n- Prova 4 (P4): peso 25%, abrangendo o conteúdo das semanas 14 a 17."
+}

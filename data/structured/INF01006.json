@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "document_id": "INF01006",
+  "institution": "Universidade Federal do Rio Grande do Sul (UFRGS)",
+  "academic_period": "2026/2",
+  "course": {
+    "code": "INF01006",
+    "name": "PROJETO DE BANCO DE DADOS",
+    "credits": 4,
+    "workload": {
+      "unit": "hours",
+      "theoretical": 20,
+      "practical": 40,
+      "total": 60,
+      "collective": 50,
+      "autonomous": 10,
+      "individual": 0,
+      "extension": 0
+    }
+  },
+  "curricula": [
+    {
+      "program": "BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO",
+      "recommended_stage": null,
+      "recommended_stage_status": "blank_in_source",
+      "nature": "Eletiva"
+    }
+  ],
+  "prerequisites": null,
+  "syllabus": "Modelagem Conceitual. Modelo ER (conceitos, mecanismos de abstração). Abordagens de Sistema de Banco de Dados (Relacional,\nNoSQL). Projeto de Bancos (modelagem conceitual, projeto lógico, implementação). Transformações entre modelos.\nDesenvolvimento de projeto como estudo de caso.",
+  "objectives": "A disciplina visa desenvolver as seguintes habilidades específicas:\n\n- Construir modelos conceituais precisos e consistentes, abstraindo informações complexas usando o Modelo\nEntidade-Relacionamento (ER).\n\n- Diferenciar os níveis de modelagem (conceitual, lógica e física).\n\n- Escolher tecnologias adequadas (SGBDs relacionais ou NoSQL) de acordo com requisitos do problema e implementar soluções\ncompletas a partir de um projeto previamente modelado.\n\n- Converter modelos conceituais em modelos lógicos adequados (relacional ou NoSQL).\n\n- Conduzir um projeto de banco de dados como estudo de caso, do levantamento de requisitos à implementação usando um SGBD,\ntrabalhando de forma colaborativa no desenvolvimento de soluções de banco de dados.",
+  "content_program": "Semana: 1\nTítulo: Apresentação da disciplina\nConteúdo: Apresentação da disciplina. Revisão sobre SGBDs e banco de dados. Fases de projeto de banco de dados (conceitual, lógico e físico).\nRevisão sobre modelo relacional como modelo lógico de banco de dados.\nSemana: 2 a 4\nTítulo: Projeto Conceitual\nConteúdo: Modelagem conceitual: conceitos, vantagens, modelos conceituais. Modelo Entidade-Relacionamento: conceitos básicos. Mecanismos\nde abstração: classificação/instanciação; generalização/especialização; agregação/desagregação. Prática de atividades de\nmodelagem a partir de enunciados de complexidade crescente.Artefatos: diagrama entidade-relacionamento e dicionário de dados.\nSemana: 5\nTítulo: Mapeamento ER-Relacional\nConteúdo: Regras de mapeamento entre modelos entidade-relacionamento e modelo relacional.\n\nSemana: 6\nTítulo: Avaliação\nConteúdo: Avaliação da parte teórica da disciplina\nSemana: 6 a 8\nTítulo: Bancos de Dados NoSQL\nConteúdo: Aulas teóricas e de laboratório sobre bancos de dados para grandes volumes de dados e análise de dados (chave-valor, colunar,\ngrafos, documentos)\nSemana: 9 a 12\nTítulo: Projeto\nConteúdo: Desenvolvimento do projeto em grupo (trabalho da disciplina). Atividade de mentoria e apresentação de propostas e resultados\nintermediários.\nSemana: 13 a 15\nTítulo: Apresentação dos trabalhos em grupo\nConteúdo: Apresentação dos trabalhos em grupo",
+  "teaching_methods": "A disciplina é apresentada em aulas de cunho teórico-expositivo intercaladas com discussões sobre exercícios, aulas em laboratório\ne trabalhos extraclasse. A disciplina utilizará o sistema Moodle/UFRGS para distribuição de material, entrega de trabalhos,\norganização de grupos de discussão e acompanhamento geral da disciplina.\n\nAs 60 horas previstas para atividades teóricas e práticas indicadas neste Plano de Ensino incluem 30 encontros de 100 minutos de\nduração (2 períodos de 50 minutos por encontro, 2 encontros por semana, durante 15 semanas), num total de 3.000 minutos, e mais\n10 horas (600 minutos) de atividades autônomas, realizadas sem contato direto com o professor, correspondentes a exercícios e\ntrabalhos extraclasse a serem avaliados. As atividades de recuperação não estão incluídas nas 60 horas. O professor poderá se\nvaler de aulas presenciais e de atividades a distância (desde que nos limites previstos pela UFRGS para disciplinas presenciais e\nempregando ferramentas para atividades remotas), assim como do apoio de Professores Assistentes (Alunos de Pós-Graduação)\nem Atividades Didáticas.",
+  "learning_experiences": "Os estudantes participarão ativamente do processo de aprendizagem por meio de aulas teórico-práticas e laboratoriais, avaliações,\nexercícios práticos, trabalhos de implementação e atividades autônomas.\n\nAs experiências de aprendizagem previstas incluem participar de aulas expositivas, realizar exercícios práticos em sala de aula e\nlaboratório, resolver listas de exercícios extraclasse, desenvolver trabalhos avaliativos, realizar eventuais leituras e consultas ao\nmaterial disponibilizado no Moodle/UFRGS, responder eventuais questionários e atividades de autoavaliação para acompanhamento\ndo progresso individual.\n\nPara o trabalho prático de projeto de banco de dados, os alunos serão divididos em grupos, cada grupo encarregado de um dos\nprojetos da disciplina. O projeto consta de cinco grandes etapas:\n- Análise de requisitos de dados\n- Modelagem conceitual e física\n- Implementação\n- População com dados\n- Projeto e programação de uma aplicação para acessar e realizar análises sobre a base de dados\n\nOs projetos serão avaliados por etapas e no final serão apresentados no formato de Pitch.",
+  "assessment": "A avaliação da aprendizagem será composta por atividades teóricas e práticas realizadas ao longo do semestre. Serão atribuídas\nquatro notas principais, correspondentes às seguintes atividades:\n\nP1 - Primeira Prova (30%): avaliação teórico-prática sobre os conteúdos da primeira parte da disciplina.\n\nAT - Atividades de Aula (10%): exercícios em classe e extraclasse.\n\nTF - Trabalho Final (60%): desenvolvimento de um projeto final envolvendo os principais tópicos estudados.\n\nA Média Final (MF) será calculada pela seguinte fórmula:\nMF = 0,30 × P1 + 0,10 × AT + 0,60 × TF\n\nAs atividades autônomas incluem listas de exercícios e o trabalho final, realizadas fora do horário regular de aula, o que contribui\npara o desenvolvimento das competências práticas e teóricas da disciplina.\n\nA conversão da Média Final (MF) em conceito final será realizada conforme a escala institucional:\nConceito A: MF maior ou igual a 9,0\nConceito B: MF maior ou igual a 7,5 e menor que 9,0\nConceito C: MF maior ou igual a 6,0 e menor que 7,5\nConceito D: MF menor que 6,0\nConceito FF: Frequência inferior a 75%, independentemente da nota"
+}

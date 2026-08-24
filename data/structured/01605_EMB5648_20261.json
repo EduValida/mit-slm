@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "document_id": "01605_EMB5648_20261",
+  "institution": "Universidade Federal de Santa Catarina (UFSC)",
+  "academic_period": "2026/1",
+  "course": {
+    "code": "EMB5648",
+    "name": "Programação I",
+    "credits": 4,
+    "workload": {
+      "unit": "class_hours",
+      "total": 72
+    }
+  },
+  "curricula": null,
+  "prerequisites": [],
+  "syllabus": "Introdução a arquitetura de computadores. Lógica de programação: formalização de problemas com\nrepresentação em pseudocódigo (algoritmos) e fluxograma, tipos de dados, estruturas de seleção e\nrepetição, fluxo de execução, modularização (funções e procedimentos), estruturas de dados homogêneas\n(vetores e matrizes). Introdução a apontadores. Arquivos. Implementação prática de algoritmos em uma\nlinguagem de alto nível.",
+  "objectives": "Ao final do semestre o aluno deverá estar apto a escrever algoritmos em pseudocódigo e programar estes\nalgoritmos em uma linguagem de programação de alto nível. Além disso, deverá ser capaz de entender o\nfuncionamento básico da arquitetura de um computador.",
+  "content_program": "1. Introdução\n1.1 – Introdução à arquitetura: princípios de funcionamento de computadores\n1.2 – Introdução à arquitetura: sistemas de numeração\n1.3 – Lógica de programação\n1.4 – Conceituação de tipos, variáveis, comandos e expressões\n1.5 – Definição de algoritmo\n\n2. Estruturas de controle\n2.1 – Sequencial\n2.2 – Seleção\n2.3 – Repetição\n\n3. Linguagem de alto nível\n3.1 – Apresentação da linguagem C\n\n3.2 – Utilização da linguagem nas estruturas apresentadas na disciplina\n\n4. Variáveis compostas\n4.1 – Vetores\n4.2 – Matrizes\n4.3 – Strings\n\n5. Modularização\n5.1 – Funções e procedimentos\n5.2 – Introdução a ponteiros\n5.3 – Programação e uso de bibliotecas próprias\n\n6. Arquivos\n6.1 – Tipos de arquivos\n6.2 – Ponteiro para arquivo\n6.2 – Operações com arquivos",
+  "teaching_methods": "Esses conteúdos serão desenvolvidos com aulas expositivas e resolução de exercícios, além de aulas\npráticas.\n- Aulas expositivas: serão ministradas aulas expositivas e dialogadas pelo professor responsável pela\ndisciplina. As aulas expositivas acontecerão em sala de aula.\n- Aulas práticas: a resolução de exercícios e problemas práticos será desenvolvida em sala de aula ou\nlaboratório de informática. Os problemas práticos serão resolvidos utilizando a linguagem de\nprogramação C.\nA disciplina possui 4 horas aula semanais, sendo 2 h/a em sala de aula e 2 h/a em laboratório de\ninformática, totalizando 50% da carga horária em laboratório.",
+  "learning_experiences": null,
+  "assessment": "Serão realizadas duas provas teóricas e exercícios práticos avaliados. As provas serão realizadas na aula\nteórica e previamente marcadas no cronograma. Os exercícios serão desenvolvidos ao longo do semestre.\nA avaliação Teórica_1 tem peso 3,5 (35% da nota), a avaliação Teórica_2 tem peso 4,5 (45% da nota) e os\nexercícios práticos (Laboratórios Virtuais de Programação- VPLs) tem peso 2,0 (20% da nota). Cada\navaliação teórica englobará todo o conteúdo ministrado nas aulas teóricas e nas aulas práticas até a aula\nque antecede a prova. A nota final será obtida através da seguinte equação:\nMédia = (Teórica_1 * 0,35) + (Teórica_2 * 0,45) + (Práticas * 0,20)\n\nSerá considerado aprovado o estudante que alcançar média igual ou superior a 5,75 (cinco vírgula setenta\ne cinco) ao final do semestre letivo, e esta será sua nota final na disciplina, desde que tenha comparecido\na um mínimo de 75% da carga horária da disciplina (art.72 e art. 69 § 2º da Resolução 017/CUn/97)."
+}

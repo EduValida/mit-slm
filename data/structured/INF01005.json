@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "document_id": "INF01005",
+  "institution": "Universidade Federal do Rio Grande do Sul (UFRGS)",
+  "academic_period": "2026/2",
+  "course": {
+    "code": "INF01005",
+    "name": "COMUNICAÇÃO DE DADOS E TECNOLOGIAS DE REDES EMERGENTES",
+    "credits": 4,
+    "workload": {
+      "unit": "hours",
+      "theoretical": 50,
+      "practical": 10,
+      "total": 60,
+      "collective": 50,
+      "autonomous": 10,
+      "individual": 0,
+      "extension": 0
+    }
+  },
+  "curricula": [
+    {
+      "program": "BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO",
+      "recommended_stage": null,
+      "recommended_stage_status": "blank_in_source",
+      "nature": "Eletiva"
+    },
+    {
+      "program": "ENGENHARIA DE COMPUTAÇÃO",
+      "recommended_stage": 9,
+      "recommended_stage_status": "explicit",
+      "nature": "Eletiva"
+    }
+  ],
+  "prerequisites": null,
+  "syllabus": "Teoria da informação. Codificação de fonte. Codificação de canal. Modulação. Canal físico. Multiplexação. Acesso múltiplo. Sistemas\nde comunicação ópticos. Sistemas de comunicação sem fios.",
+  "objectives": "A disciplina visa desenvolver as seguinte habilidades específicas:\nSIS-H6 - Caracterizar métricas e indicadores chaves de desempenho em redes, como atraso, perda, jitter e vazão, bem como\nreconhecer fontes e causas de interferência nesses indicadores.\nSIS-H7 - Compreender fundamentos de funcionamento de tecnologias de redes, cabeadas e sem fio, de diferentes alcances",
+  "content_program": "Semana: 1 a 2\nTítulo: Introdução e fundamentos teóricos\nConteúdo: Introdução à disciplina, fundamentos de teoria de comunicação, análise de Fourier\nSemana: 3 a 7\nTítulo: Fundamentos de sistemas de comunicação de dados\nConteúdo: Caracterização de um canal; transmissão em banda base e modulada; codificação de canal; multiplexação; OFDM.\nSemana: 8 a 10\nTítulo: Sistemas de comunicação ópticos\nConteúdo: Fundamentos de física óptica; fibras ópticas, características e distorções; sistemas de comunicação baseados em fibras ópticas.\nSemana: 11 a 15\nTítulo: Sistemas de comunicação sem fio\nConteúdo: Fundamentos de comunicação sem fio, antenas, faixas de frequência; acesso múltiplo e espalhamento espectral; redes pessoais,\nlocais, metropolitanas e de longa distância sem fio; sistemas celulares.",
+  "teaching_methods": "A disciplina utilizará o sistema Moodle/UFRGS para distribuição de material, entrega de trabalhos, organização de grupos de\ndiscussão e acompanhamento geral da disciplina. A disciplina é apresentada em aulas teórico-práticas, em que se combina a\napresentação dos conceitos e técnicas com o desenvolvimento de eventuais exercícios e discussões. As 60 horas previstas para\natividades teóricas e práticas indicadas neste Plano de Ensino incluem 30 encontros de 100 minutos de duração (2 períodos de 50\nminutos por encontro, 2 encontros por semana, durante 15 semanas), num total de 3.000 minutos, e mais 10 horas (600 minutos) de\natividades autônomas, realizadas sem contato direto com o professor, correspondentes a exercícios e trabalhos extraclasse a serem\navaliados. O Professor poderá se valer de aulas presenciais ou à distância (empregando ferramentas de atividades remotas, nos\nlimites previstos pela UFRGS), assim como do apoio de Professores Assistentes (Alunos de Pós-Graduação) em Atividades\n\nDidáticas.",
+  "learning_experiences": "Os alunos participarão das seguintes experiências de aprendizagem: aulas expositivas dialogadas; aulas práticas em laboratório;\nrealizar trabalhos de desenvolvimento e avaliação experimental extraclasse; resolver listas de exercícios extraclasse; realizar leitura\nde material disponibilizado; assistir a vídeos ou a videoaulas; responder questionários.",
+  "assessment": "- A avaliação de desempenho se dará através de duas verificações teóricas (V1 e V2), trabalhos práticos ao longo do semestre (TP)\ne um trabalho final da disciplina (TF).\n- A nota final (NF) será obtida através da média ponderada das verificações (60%), trabalhos práticos (20%) e trabalho final (20%):\nNF = 0.6*(V1+V2)/2 + 0.2*TP + 0.2*TF.\n\n- Alunos com menos de 75% de frequência nas atividades presenciais receberão conceito FF;\nOs alunos que NÃO alcançarem 60% de aproveitamento (NF < 6.0), receberão conceito D;\nos alunos que alcançarem entre 60% e 75% de aproveitamento (6.0 ≤ NF < 7.5), receberão conceito C;\nos alunos que alcançarem entre 75% e 90% de aproveitamento (7.5 ≤ NF < 9.0), receberão conceito B;\ne os alunos que alcançarem 90% de aproveitamento (9.0 ≤ NF), receberão conceito A;"
+}

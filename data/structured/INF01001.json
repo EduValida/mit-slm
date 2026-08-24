@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "document_id": "INF01001",
+  "institution": "Universidade Federal do Rio Grande do Sul (UFRGS)",
+  "academic_period": "2026/2",
+  "course": {
+    "code": "INF01001",
+    "name": "ESPECIFICAÇÃO FORMAL N",
+    "credits": 4,
+    "workload": {
+      "unit": "hours",
+      "theoretical": 60,
+      "practical": 0,
+      "total": 60,
+      "collective": 60,
+      "autonomous": 0,
+      "individual": 0,
+      "extension": 0
+    }
+  },
+  "curricula": [
+    {
+      "program": "BACHARELADO EM CIÊNCIA DA COMPUTAÇÃO",
+      "recommended_stage": null,
+      "recommended_stage_status": "blank_in_source",
+      "nature": "Eletiva"
+    },
+    {
+      "program": "ENGENHARIA DE COMPUTAÇÃO",
+      "recommended_stage": 7,
+      "recommended_stage_status": "explicit",
+      "nature": "Eletiva"
+    }
+  ],
+  "prerequisites": null,
+  "syllabus": "Revisão matemática; métodos e linguagens; classificação dos métodos formais; especificação executáveis (prototipação);\napresentação e aplicação de métodos e linguagens de especificação formal: VDM, Z, CCS, CSP, OBJ, LOTOS, UNIT e outros.",
+  "objectives": "Objetivos: O objetivo dos cursos de Engenharias é, em geral, dotar os profissionais de habilidades e competências para encontrar\nsoluções de problemas que normalmente envolvem elementos da natureza. Os princípios, métodos ou processos de engenharia,\nmostram os passos necessárias para resolver problemas. Métodos e processos podem também ser usados para resolver problemas\nabstratos.\nDe forma simplificada, o processo de engenharia de software começa pela (i) análise de requisitos, (ii) Estruturação ou\nmodularização da solução (iii) especificação e prova formal da solução, (iv) implementação, (v) prova da implementação e\nfinalmente, (vi) instalação e validação.\nMuitos profissionais de engenharia de software começam pela análise de requisitos e seguem diretamente para a fase de\nimplementação. O problema deste processo está na interpretação ambígua dos requisitos. Testes e simulações são necessários\npara verificar se a implementação (software ou hardware) está correta. Entretanto, em se tratando de sistemas críticos, como\ncontrole de centrais nucleares, sistemas de monitoramento e exames de pacientes, balísticas, aviônica etc. testes, mesmo com uma\nboa cobertura, não são suficientes.\nConforme o processo de Engenharia de Software, usando um método formal, a solução do problema é formalizada com a\nconstrução de uma especificação formal, que independe de implementação.\nVerificação de modelo (Model Checking) consiste na definição e prova de propriedades da especificação, validando-a. Depois,\nusando criatividade, um programa é construído a partir da especificação, usando uma linguagem de programação, por exemplo,\nPyton. Verificação de equivalência (Equivalence checking) consiste na prova de que o programa satisfaz a especificação, ou seja, a\nprova de que o software/hardware está correto. Essas provas são complexas para serem realizadas a mão e provadores\nautomáticos de teoremas são usados, como, por exemplo, SPEC#. Provas formais e automáticas garantem que o programa satisfaz\nsua especificação.\nDependendo do problema, existem métodos formais para especificação de problemas sequenciais, concorrentes (inter leaving),\nparalelos e de tempo real.\nMuitos dos métodos formais possuem um interpretador e, assim, especificações formais podem ser executadas, contribuindo para\nsua validação junto ao cliente (antes da construção do programa). Especificações executáveis são chamadas de protótipo do\nsistema. Existe um lema da Engenharia de Software estabelecendo que quanto mais tarde for encontrado um erro no processo de\nsoftware, mais caro custa a sua correção.\n\nNo inicio da disciplina é apresentado o MAUDE básico, uma linguagem de especificação formal. Depois, enquanto são apresentado\n\nnovos conteúdos, um exemplo pratico de especificação é apresentado: a especificação de um Hotel com suas operações como\n\"fazer reserva\", \"check-in\" e \"check-out\". Usando a ferramenta \"Model cheking\" do Maude a especificação é verificada quanto a\ncorretude. Depois, uma mini Linguagem de Programação é especificada em Maude, dando semântica à Linguagem. Programas\npodem ser escritos nesta Linguagem e executados pelo Maude. No ultimo capitulo é apresentado os conceitos de \"Knuth-Bendix\ncompletion\" permitindo provar que programas satisfazem sua especificação.",
+  "content_program": "Semana: 1 a 15\nTítulo: Métodos formais, especificação e verificação\nConteúdo: Os capítulos a que se refere esta tabela são do livro texto \"Introdução à\nAbstração de Dados\".\n\nSemana Título Conteúdo\n\n1 especificação de tipos primitivos Capítulo 1\n2 reescrita de termos Capítulos 2 + 3\n3 extensão de tipos primitivos Capítulo 4\n4-5 espécies Capítulo 5\n6 tipos parametrizados: sortes Capítulo 6\n7 tipos parametrizados: termos Capítulo 7\n8 tipos parametrizados: operadores Capítulo 8\n9 Implementação de tipos de dados Capítulo 9\n10 semântica de Ling. de Prog. Capítulo 10\n11 álgebras Capítulo 11\n12 provas de teoremas Capítulo 12\n13 Método VDM\n14-15 Método CCS",
+  "teaching_methods": "As aulas são expositivas com esclarecimento de dúvidas, apresentação de exercícios resolvidos e, em pontos estratégicos,\napresentação de exercícios para serem resolvidos em casa",
+  "learning_experiences": "No decorrer da disciplina, exercícios freqüentes são apresentados para serem resolvidos em casa. Esses exercícios devem ser\nresolvidos individuamente e entregues nas datas fixadas.",
+  "assessment": "Os exercícios resolvidos individualmente, a frequência e a participação em sala de aula são bases para definição do conceito da\ndisciplina. Os exercícios permitem ao docente da disciplina avaliar o quanto os alunos estão aprendendo e são usados na\navaliação.\n\nCada exercício recebe um conceito de A (5) a D (1) ou FF (0) (exercício não entregue). A média final m é a\nmédia aritmética de todas as notas. O conceito final é\n\nA, caso 5 >= m >= 4,5,\nB, caso 4,5 > m >= 3,5\nC, caso 3,5 > m >=3\nD, caso 3 > m >= 0"
+}
