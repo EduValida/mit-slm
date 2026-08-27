@@ -1,0 +1,72 @@
+experiment:
+  id: badge-models-grounded-v1
+  output_dir: evaluation/results
+
+ollama:
+  base_url: http://localhost:11434
+  keep_alive: 30m
+  warmup: true
+  timeout_seconds: 600
+
+dataset:
+  glob: data/structured/*.json
+  serializer: deterministic_json
+
+# Add one entry for every exact Ollama tag that should be compared.
+# Avoid floating tags such as "latest" when a versioned tag is available.
+models:
+  - name: phi4-mini:3.8b-q4_K_M
+  # - name: another-model:exact-tag
+
+generation:
+  temperature: 0
+  top_p: 0.9
+  top_k: 25
+  num_predict: 1024
+  repeat_penalty: 1.05
+  num_ctx: 6144
+  seeds: [42]
+
+# Keep every field explicit: empty values make the production code choose some
+# options randomly and would make the model comparison unfair.
+badge:
+  language: pt
+  badge_style: Academic
+  badge_tone: Detailed
+  criterion_style: Task-Oriented
+  badge_level: Intermediate
+  institution: Universidade Federal do Rio Grande do Sul (UFRGS)
+  custom_instructions: |-
+    Escreva em português brasileiro natural, correto e tecnicamente preciso.
+
+    Baseie todo o conteúdo exclusivamente no plano de ensino fornecido. Não
+    invente competências, ferramentas, níveis de domínio, desempenho, notas,
+    conclusão do curso ou informações sobre o histórico do estudante.
+
+    Preserve o nome oficial da disciplina no título. Evite títulos inflados
+    como "Mestre", "Especialista", "Expert" ou "Certificado" quando essas
+    qualificações não estiverem explicitamente sustentadas pela fonte.
+
+    Organize os critérios em competências individuais e cubra todos os
+    principais blocos presentes na ementa, nos objetivos e no conteúdo
+    programático. Não omita tópicos explicitamente documentados.
+
+    Use verbos de ação da Taxonomia de Bloom no presente, como "aplica",
+    "analisa", "implementa", "avalia" e "explica", escolhendo-os conforme a
+    complexidade demonstrável do conteúdo, e não apenas pela carga horária.
+
+    O nível configurado para o badge representa a complexidade ou o público-alvo
+    da disciplina; não o apresente como nível de proficiência individual
+    comprovado.
+
+    Diferencie métodos e regras gerais de avaliação de resultados individuais.
+    Uma nota mínima de aprovação não é a nota obtida pelo estudante.
+
+    Nunca produza placeholders como "[this/Issuer's]", traduções literais de
+    templates ou expressões como "Recepções de". Prefira construções naturais
+    como "Para obter esta credencial, a pessoa deve demonstrar...".
+
+    Revise gramática, concordância e terminologia técnica antes de responder.
+
+prompt:
+  system_prompt_path: app/prompts/badge_system_prompt.txt

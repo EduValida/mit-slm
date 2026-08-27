@@ -19,8 +19,8 @@ from app.services.badge_generator import (
     get_badge_configuration,
     apply_regeneration_overrides,
     optimize_badge_text,
-    extract_json_from_response
 )
+from app.services.model_output import extract_json_from_response
 # OLD: Complex local image generation - now handled by external service
 # from app.services.image_client import generate_badge_with_text, generate_badge_with_icon
 # from app.utils.icon_matcher import get_icon_suggestions_for_badge

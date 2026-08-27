@@ -5,6 +5,7 @@ __pycache__/
 *.pyo
 *.log
 logs/
+evaluation/results/
 *.env
 .env*
 !.env.example
@@ -13,4 +14,3 @@ claude.md
 
 # dados potencialmente privados
 data/raw/*.pdf
-

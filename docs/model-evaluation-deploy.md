@@ -43,3 +43,10 @@ docker compose up -d
 O serviço `model-loader` baixa o modelo antes de iniciar a API. O comando
 `docker compose down` preserva os modelos; `docker compose down -v` remove o
 volume e força um novo download.
+
+## Comparação estruturada
+
+Para executar vários modelos sobre os planos em `data/structured`, coletar
+métricas e gerar uma comparação visual detalhada, consulte
+[`evaluation/README.md`](../evaluation/README.md). O runner se comunica
+diretamente com o Ollama e não exige reiniciar a API entre modelos.

@@ -1,5 +1,3 @@
-import json
-import re
 import random
 import logging
 from typing import Dict, Any, AsyncGenerator
@@ -8,6 +6,8 @@ from fastapi import HTTPException
 
 from app.core.config import settings
 from app.models.badge import BadgeValidated
+from app.services.badge_prompt import build_badge_prompt
+from app.services.model_output import extract_json_from_response
 from app.services.ollama_client import call_model_async, call_model_stream_async
 from app.services.text_processor import process_course_input
 
@@ -79,61 +79,6 @@ def apply_regeneration_overrides(current_params: Dict[str, str], regeneration_re
     
     return updated_params
 
-def _normalize_json_text(text: str) -> str:
-    """Normalize Unicode punctuation that models sometimes emit instead of ASCII."""
-    # Unicode curly/smart quotes → ASCII double quotes
-    text = text.replace('“', '"').replace('”', '"')
-    # Single curly quotes → ASCII single quotes (inside strings)
-    text = text.replace('‘', "'").replace('’', "'")
-    # Fullwidth brackets (CJK)
-    text = text.replace('｛', '{').replace('｝', '}')
-    text = text.replace('［', '[').replace('］', ']')
-    # Fullwidth colon / comma
-    text = text.replace('：', ':').replace('，', ',')
-    return text
-
-
-def extract_json_from_response(response_text: str) -> dict:
-    """Extract JSON from model response, handling various formats and languages."""
-    if not response_text or not response_text.strip():
-        return {}
-
-    # Normalize Unicode punctuation emitted by multilingual models
-    text = _normalize_json_text(response_text)
-
-    # 1. Strip markdown code fences (```json ... ``` or ``` ... ```)
-    fence_match = re.search(r'```(?:json)?\s*(\{.*?\})\s*```', text, re.DOTALL)
-    if fence_match:
-        try:
-            return json.loads(fence_match.group(1).strip())
-        except json.JSONDecodeError:
-            pass
-
-    # 2. Try the whole response as-is (model output exactly right)
-    try:
-        return json.loads(text.strip())
-    except json.JSONDecodeError:
-        pass
-
-    # 3. Find the JSON object that starts with our known key
-    anchor_match = re.search(r'\{[^{}]*"badge_name".*\}', text, re.DOTALL)
-    if anchor_match:
-        try:
-            return json.loads(anchor_match.group(0).strip())
-        except json.JSONDecodeError:
-            pass
-
-    # 4. Generic: find any outermost {...} block
-    brace_match = re.search(r'\{.*\}', text, re.DOTALL)
-    if brace_match:
-        try:
-            return json.loads(brace_match.group(0).strip())
-        except json.JSONDecodeError:
-            pass
-
-    logger.warning("Could not extract valid JSON from response: %s", response_text[:300])
-    return {"error": "json_extraction_failed", "raw_response": response_text}
-
 def _resolve_language(request) -> str:
     """Return the full language name for the request, defaulting to English."""
     if hasattr(request, 'badge_configuration'):
@@ -165,32 +110,19 @@ async def generate_badge_metadata_async(request) -> dict:
         institution = request.institution
         custom_instructions = request.custom_instructions
 
-    # Build context-rich user message
-    user_content = f"""[LANGUAGE: {language}]
-
-Course Content: {processed_course_input}
-
-Parameters:
-- Style: {settings.STYLE_DESCRIPTIONS.get(badge_params['badge_style'])}
-- Tone: {settings.TONE_DESCRIPTIONS.get(badge_params['badge_tone'])}  
-- Level: {settings.LEVEL_DESCRIPTIONS.get(badge_params['badge_level'])}
-- Criterion Style: {settings.CRITERION_TEMPLATES.get(badge_params['criterion_style'])}"""
-    
-    if badge_style:
-        user_content += f"\n- Badge Style: {badge_style} , incorporate prominently in both badge name and badge description"
-
-    if institution:
-        user_content += f"\n- Institution: {institution} , incorporate prominently in both badge name and badge description for branding"
-        
-    if custom_instructions:
-        user_content += f"\n- Special Instructions: {custom_instructions}"
-
-    user_content += f"\n\nCRITICAL: ALL badge text values MUST be written in {language}, even if the course content above is in a different language."
-    user_content += "\n\nRespond with ONLY a JSON object. Start your response with `{` — no intro text, no explanation, no markdown fences."
-    user_content += "\nSchema: {\"badge_name\": \"...\", \"badge_description\": \"...\", \"criteria\": {\"narrative\": \"...\"}}"
-
     # The shared system prompt supplies the common generation instructions.
-    prompt = user_content
+    prompt = build_badge_prompt(
+        course_input=processed_course_input,
+        language=language,
+        badge_params=badge_params,
+        style_descriptions=settings.STYLE_DESCRIPTIONS,
+        tone_descriptions=settings.TONE_DESCRIPTIONS,
+        level_descriptions=settings.LEVEL_DESCRIPTIONS,
+        criterion_templates=settings.CRITERION_TEMPLATES,
+        badge_style=badge_style,
+        institution=institution,
+        custom_instructions=custom_instructions,
+    )
     
     response, metrics = await call_model_async(prompt)
     result = extract_json_from_response(response)

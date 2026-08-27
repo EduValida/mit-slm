@@ -38,7 +38,8 @@ class OllamaClient:
         top_p: Optional[float] = None,
         top_k: Optional[int] = None,
         repeat_penalty: Optional[float] = None,
-        context_length: Optional[int] = None
+        context_length: Optional[int] = None,
+        model_name: Optional[str] = None,
     ) -> AsyncGenerator[Dict[str, Any], None]:
         """Make streaming API call to Ollama with structured response format."""
         
@@ -53,8 +54,9 @@ class OllamaClient:
         }
         options.update({key: value for key, value in overrides.items() if value is not None})
         
+        selected_model = model_name or settings.MODEL_NAME
         payload = {
-            "model": settings.MODEL_NAME,
+            "model": selected_model,
             "system": self.system_prompt,
             "prompt": content,
             "stream": True,
@@ -137,15 +139,21 @@ class OllamaClient:
                 "error_code": "unexpected_error"
             }
 
-    async def generate(self, prompt: str, config: Optional[Dict] = None) -> tuple[str, Dict[str, Any]]:
+    async def generate(
+        self,
+        prompt: str,
+        config: Optional[Dict] = None,
+        model_name: Optional[str] = None,
+    ) -> tuple[str, Dict[str, Any]]:
         """Make async API call to Ollama. Returns (response_text, metrics)."""
         options = self.model_config.copy()
         overrides = config.copy() if config else {}
         keep_alive = overrides.pop("keep_alive", self.keep_alive)
         options.update(overrides)
 
+        selected_model = model_name or settings.MODEL_NAME
         payload = {
-            "model": settings.MODEL_NAME,
+            "model": selected_model,
             "system": self.system_prompt,
             "prompt": prompt,
             "stream": False,
@@ -158,7 +166,12 @@ class OllamaClient:
 
         try:
             async with httpx.AsyncClient(timeout=timeout) as client:
-                logger.info(f"Making non-streaming request {request_id} to model {settings.MODEL_NAME} with keep_alive={keep_alive}")
+                logger.info(
+                    "Making non-streaming request %s to model %s with keep_alive=%s",
+                    request_id,
+                    selected_model,
+                    keep_alive,
+                )
                 response = await client.post(self.api_url, json=payload)
                 response.raise_for_status()
                 result = response.json()
@@ -191,7 +204,8 @@ class OllamaClient:
     async def generate_with_parameters(self, prompt: str, temperature: Optional[float] = None,
                                        max_tokens: Optional[int] = None, top_p: Optional[float] = None,
                                        top_k: Optional[int] = None, repeat_penalty: Optional[float] = None,
-                                       context_length: Optional[int] = None) -> tuple[str, Dict[str, Any]]:
+                                       context_length: Optional[int] = None,
+                                       model_name: Optional[str] = None) -> tuple[str, Dict[str, Any]]:
         """Generate response with specific parameters."""
         overrides = {
             "temperature": temperature,
@@ -202,7 +216,11 @@ class OllamaClient:
             "num_ctx": context_length,
         }
         config = {key: value for key, value in overrides.items() if value is not None}
-        response_text, metrics = await self.generate(prompt, config)
+        response_text, metrics = await self.generate(
+            prompt,
+            config,
+            model_name=model_name,
+        )
         return response_text, metrics
     
     def get_metrics_from_stream(self, stream_chunks: list) -> Optional[Dict[str, Any]]:
@@ -229,9 +247,13 @@ async def call_model_stream_async(prompt: str, **kwargs) -> AsyncGenerator[Dict[
     async for chunk in ollama_client.generate_stream(prompt, **kwargs):
         yield chunk
 
-async def call_model_async(prompt: str, config: Optional[Dict] = None) -> tuple[str, Dict[str, Any]]:
+async def call_model_async(
+    prompt: str,
+    config: Optional[Dict] = None,
+    model_name: Optional[str] = None,
+) -> tuple[str, Dict[str, Any]]:
     """Convenience function for non-streaming model calls. Returns (response_text, metrics)."""
-    return await ollama_client.generate(prompt, config)
+    return await ollama_client.generate(prompt, config, model_name=model_name)
 
 async def call_model_with_params_async(prompt: str, **kwargs) -> tuple[str, Dict[str, Any]]:
     """Convenience function for model calls with specific parameters. Returns (response_text, metrics)."""
