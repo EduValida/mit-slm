@@ -52,6 +52,10 @@ generation:
 Não deixe estilo, tom, nível ou tipo de critério vazios: a aplicação escolhe
 valores aleatórios quando eles não são informados.
 
+A instituição declarada em cada plano tem precedência sobre `badge.institution`.
+O valor da configuração funciona apenas como fallback para planos que não
+informam a instituição.
+
 ## 3. Conferir e executar
 
 Valide a configuração e veja o tamanho da campanha sem chamar modelos:

@@ -1,5 +1,5 @@
 experiment:
-  id: badge-models-grounded-v1
+  id: local-v4
   output_dir: evaluation/results
 
 ollama:
@@ -16,7 +16,9 @@ dataset:
 # Avoid floating tags such as "latest" when a versioned tag is available.
 models:
   - name: phi4-mini:3.8b-q4_K_M
-  # - name: another-model:exact-tag
+  - name: gemma4:12b
+  - name: qwen3.5:4b
+  - name: granite4.2:8b-q4_K_M
 
 generation:
   temperature: 0
@@ -35,7 +37,7 @@ badge:
   badge_tone: Detailed
   criterion_style: Task-Oriented
   badge_level: Intermediate
-  institution: Universidade Federal do Rio Grande do Sul (UFRGS)
+  institution: Instituição de Ensino Superior
   custom_instructions: |-
     Escreva em português brasileiro natural, correto e tecnicamente preciso.
 

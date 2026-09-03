@@ -145,17 +145,26 @@ def load_dataset(pattern: str, serializer: str, limit: Optional[int]) -> List[Di
         course = plan.get("course") or {}
         course_id = str(plan.get("document_id") or course.get("code") or path.stem)
         course_name = str(course.get("name") or course_id)
+        source_institution = str(plan.get("institution") or "").strip() or None
         serialized = serialize_course_plan(plan, serializer)
         cases.append(
             {
                 "course_id": course_id,
                 "course_name": course_name,
+                "source_institution": source_institution,
                 "source_path": str(path.relative_to(ROOT)),
                 "serialized": serialized,
                 "input_sha256": sha256_text(serialized),
             }
         )
     return cases
+
+
+def institution_for_case(case: Mapping[str, Any], config: Mapping[str, Any]) -> Optional[str]:
+    """Prefer the plan issuer and use the configured institution only as a fallback."""
+    source_institution = str(case.get("source_institution") or "").strip()
+    configured_institution = str(config["badge"].get("institution") or "").strip()
+    return source_institution or configured_institution or None
 
 
 def prompt_for_case(case: Mapping[str, Any], config: Mapping[str, Any]) -> str:
@@ -181,7 +190,7 @@ def prompt_for_case(case: Mapping[str, Any], config: Mapping[str, Any]) -> str:
         level_descriptions=LEVEL_DESCRIPTIONS,
         criterion_templates=CRITERION_TEMPLATES,
         badge_style=badge_params["badge_style"],
-        institution=str(badge["institution"]),
+        institution=institution_for_case(case, config),
         custom_instructions=str(badge["custom_instructions"]) or None,
     )
 
@@ -299,6 +308,7 @@ async def generate(
             "system": system_prompt,
             "prompt": prompt,
             "stream": False,
+            "think": False,
             "keep_alive": keep_alive,
             "options": dict(options),
         },
@@ -443,6 +453,8 @@ async def run_experiment(args: argparse.Namespace) -> Optional[Path]:
                             "model_details": model_meta.get("details"),
                             "course_id": case["course_id"],
                             "course_name": case["course_name"],
+                            "source_institution": case["source_institution"],
+                            "effective_institution": institution_for_case(case, config),
                             "source_path": case["source_path"],
                             "input_sha256": case["input_sha256"],
                             "system_prompt_sha256": system_prompt_hash,
