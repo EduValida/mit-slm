@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 import statistics
 from collections import defaultdict
 from pathlib import Path
@@ -91,6 +92,20 @@ def performance_rows(records: Sequence[Mapping[str, Any]]) -> List[Dict[str, Any
             for run in successful
             if (run.get("resources") or {}).get("ollama_loaded_size_bytes") is not None
         ]
+        vram_sizes = [
+            float(run["resources"]["ollama_size_vram_bytes"])
+            for run in successful
+            if (run.get("resources") or {}).get("ollama_size_vram_bytes") is not None
+        ]
+        ram_sizes = [
+            max(
+                float(run["resources"]["ollama_loaded_size_bytes"])
+                - float(run["resources"].get("ollama_size_vram_bytes") or 0),
+                0,
+            )
+            for run in successful
+            if (run.get("resources") or {}).get("ollama_loaded_size_bytes") is not None
+        ]
         file_sizes = [
             float(run["model_size_bytes"])
             for run in model_runs
@@ -110,8 +125,11 @@ def performance_rows(records: Sequence[Mapping[str, Any]]) -> List[Dict[str, Any
                 "mean_generation_tokens_per_second": mean(
                     performance_values("generation_tokens_per_second")
                 ),
+                "length_limited_runs": len(length_limited),
                 "length_limit_rate": len(length_limited) / len(successful) if successful else 0,
                 "ollama_loaded_size_bytes": max(loaded_sizes) if loaded_sizes else None,
+                "ollama_ram_size_bytes": max(ram_sizes) if ram_sizes else None,
+                "ollama_size_vram_bytes": max(vram_sizes) if vram_sizes else None,
                 "model_file_size_bytes": max(file_sizes) if file_sizes else None,
             }
         )
@@ -320,11 +338,191 @@ Object.keys(reviewState).forEach(restoreCase);
     path.write_text(document, encoding="utf-8")
 
 
+def markdown_inline(value: Any) -> str:
+    return "" if value is None else " ".join(str(value).split())
+
+
+def markdown_table_cell(value: Any) -> str:
+    return markdown_inline(value).replace("\\", "\\\\").replace("|", "\\|")
+
+
+def markdown_quote(value: Any) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return "> _(não informado)_"
+    return "\n".join(f"> {line}" if line else ">" for line in text.splitlines())
+
+
+def markdown_code_block(value: Any, language: str = "text") -> str:
+    text = str(value or "").rstrip()
+    longest_run = max((len(match.group(0)) for match in re.finditer(r"`+", text)), default=0)
+    fence = "`" * max(3, longest_run + 1)
+    return f"{fence}{language}\n{text}\n{fence}"
+
+
+def ram_size_bytes(record: Mapping[str, Any]) -> Optional[float]:
+    resources = record.get("resources") or {}
+    loaded = resources.get("ollama_loaded_size_bytes")
+    if loaded is None:
+        return None
+    vram = resources.get("ollama_size_vram_bytes") or 0
+    return max(float(loaded) - float(vram), 0)
+
+
+def readable_status(record: Optional[Mapping[str, Any]]) -> str:
+    if not record:
+        return "❌ Execução ausente"
+    if record.get("status") != "success":
+        return f"❌ {record.get('error_type') or 'Erro'}"
+    checks = record.get("checks") or {}
+    done_reason = (record.get("ollama_metrics") or {}).get("done_reason")
+    if done_reason == "length":
+        return "⚠️ Limite de tokens atingido"
+    if not checks.get("required_structure"):
+        return "⚠️ Output inválido ou incompleto"
+    return "✅ Completo"
+
+
+def readable_metrics(record: Optional[Mapping[str, Any]]) -> str:
+    if not record:
+        return readable_status(record)
+    if record.get("status") != "success":
+        error = markdown_inline(record.get("error") or "falha sem detalhes")
+        return f"{readable_status(record)} · {error}"
+
+    metrics = record.get("ollama_metrics") or {}
+    performance = record.get("performance") or {}
+    resources = record.get("resources") or {}
+    prompt_tokens = metrics.get("prompt_eval_count")
+    output_tokens = metrics.get("eval_count")
+    parts = [
+        readable_status(record),
+        format_number(performance.get("wall_time_seconds"), 2, " s"),
+        format_number(performance.get("generation_tokens_per_second"), 2, " tok/s"),
+        f"{'—' if prompt_tokens is None else prompt_tokens} tokens de entrada",
+        f"{'—' if output_tokens is None else output_tokens} tokens de saída",
+        f"RAM {format_bytes(ram_size_bytes(record))}",
+        f"VRAM {format_bytes(resources.get('ollama_size_vram_bytes'))}",
+    ]
+    done_reason = metrics.get("done_reason")
+    if done_reason and done_reason != "stop":
+        parts.append(f"término: {done_reason}")
+    return " · ".join(parts)
+
+
+def markdown_summary_table(rows: Sequence[Mapping[str, Any]]) -> str:
+    lines = [
+        "| Modelo | Outputs válidos | Tempo mediano | Velocidade média | RAM máxima | VRAM máxima | Limite atingido |",
+        "|---|---:|---:|---:|---:|---:|---:|",
+    ]
+    for row in rows:
+        values = (
+            row["model"],
+            f'{row["usable_outputs"]}/{row["runs"]}',
+            format_number(row["median_wall_time_seconds"], 2, " s"),
+            format_number(row["mean_generation_tokens_per_second"], 2, " tok/s"),
+            format_bytes(row["ollama_ram_size_bytes"]),
+            format_bytes(row["ollama_size_vram_bytes"]),
+            row["length_limited_runs"],
+        )
+        lines.append("| " + " | ".join(markdown_table_cell(value) for value in values) + " |")
+    return "\n".join(lines)
+
+
+def markdown_output(record: Optional[Mapping[str, Any]], model: str) -> str:
+    lines = [f"#### `{model}`", "", f"**Métricas:** {readable_metrics(record)}", ""]
+    if not record or record.get("status") != "success":
+        return "\n".join(lines).rstrip()
+
+    checks = record.get("checks") or {}
+    if not checks.get("required_structure"):
+        lines.extend(
+            (
+                "> ⚠️ O modelo não produziu a estrutura esperada. Abaixo está o output original.",
+                "",
+                "##### Output original",
+                "",
+                markdown_code_block(record.get("raw_output") or "(output vazio)"),
+            )
+        )
+        return "\n".join(lines).rstrip()
+
+    lines.extend(
+        (
+            "##### Nome do badge",
+            "",
+            markdown_quote(output_field(record, "badge_name")),
+            "",
+            "##### Descrição",
+            "",
+            markdown_quote(output_field(record, "badge_description")),
+            "",
+            "##### Critérios",
+            "",
+            markdown_quote(output_field(record, "criteria")),
+        )
+    )
+    return "\n".join(lines).rstrip()
+
+
+def write_markdown_comparison(
+    records: Sequence[Mapping[str, Any]],
+    summary_rows: Sequence[Mapping[str, Any]],
+    path: Path,
+) -> None:
+    experiment_id = str(records[0]["experiment_id"])
+    models = sorted({str(record["model"]) for record in records})
+    versions = sorted(
+        {str(record["ollama_version"]) for record in records if record.get("ollama_version")}
+    )
+    seeds = sorted({int(record["seed"]) for record in records})
+    grouped: Dict[tuple[str, int], Dict[str, Mapping[str, Any]]] = defaultdict(dict)
+    for record in records:
+        key = (str(record["course_id"]), int(record["seed"]))
+        grouped[key][str(record["model"])] = record
+
+    lines = [
+        f"# Comparação de modelos — {experiment_id}",
+        "",
+        "Relatório legível gerado a partir dos outputs originais da evaluation.",
+        "",
+        f"- **Modelos:** {', '.join(f'`{model}`' for model in models)}",
+        f"- **Versão do Ollama:** {', '.join(versions) if versions else 'não registrada'}",
+        f"- **Seeds:** {', '.join(str(seed) for seed in seeds)}",
+        "",
+        "## Resumo",
+        "",
+        markdown_summary_table(summary_rows),
+    ]
+
+    for course_id, seed in sorted(grouped):
+        case_records = grouped[(course_id, seed)]
+        representative = next(iter(case_records.values()))
+        course_name = representative.get("course_name") or course_id
+        lines.extend(
+            (
+                "",
+                "---",
+                "",
+                f"## {markdown_inline(course_id)} — {markdown_inline(course_name)}",
+            )
+        )
+
+        lines.extend(("", "### Outputs dos modelos", ""))
+        for index, model in enumerate(models):
+            if index:
+                lines.extend(("", "---", ""))
+            lines.append(markdown_output(case_records.get(model), model))
+
+    path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+
+
 def generate_reports(results_path: Path) -> None:
     records = load_runs(results_path)
     rows = performance_rows(records)
     result_dir = results_path.parent
     write_comparison(records, rows, result_dir / "comparison.html")
+    write_markdown_comparison(records, rows, result_dir / "comparison.md")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -339,6 +537,7 @@ def main() -> None:
     try:
         generate_reports(results_path)
         print(f"Comparação detalhada: {results_path.parent / 'comparison.html'}")
+        print(f"Comparação em Markdown: {results_path.parent / 'comparison.md'}")
     except (OSError, ValueError, KeyError, TypeError) as exc:
         raise SystemExit(f"Erro: {exc}") from exc
 

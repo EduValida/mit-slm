@@ -98,6 +98,7 @@ evaluation/results/<experiment-id>/
   config.yaml
   runs.jsonl
   comparison.html
+  comparison.md
 ```
 
 Abra `comparison.html` no navegador. A página mostra os nomes reais dos modelos,

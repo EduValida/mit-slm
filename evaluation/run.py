@@ -460,6 +460,7 @@ async def run_experiment(args: argparse.Namespace) -> Optional[Path]:
                             "system_prompt_sha256": system_prompt_hash,
                             "prompt_sha256": sha256_text(prompt),
                             "seed": seed,
+                            "think": False,
                             "parameters": options,
                         }
                         try:
@@ -522,6 +523,7 @@ def main() -> None:
     if result_dir is not None:
         print(f"Resultados: {result_dir}")
         print(f"Comparação detalhada: {result_dir / 'comparison.html'}")
+        print(f"Comparação em Markdown: {result_dir / 'comparison.md'}")
 
 
 if __name__ == "__main__":
